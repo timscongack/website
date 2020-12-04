@@ -154,7 +154,7 @@ color: inherit;
 
   
   /* Mobile */
-  @media(max-width: 300px) {
+  @media(max-width: 200px) {
     .style0
     .style1
     .style2
