@@ -1,0 +1,131 @@
+.ta_center {
+text-align: center
+}
+.ta_right {
+text-align: right
+}
+@font-face{
+font-family:f0;
+src:url(resume/base/staticfiles/fonts/f0.ttf)format("truetype");
+}
+@font-face{
+font-family:f1;
+src:url(fonts.f1.ttf)format("truetype");
+}
+@font-face{
+font-family:f2;
+src:url(fonts/f2.ttf)format("truetype");
+}
+@font-face{
+font-family:f3;
+src:url(fonts/f3.ttf)format("truetype");
+}
+@font-face{
+font-family:f4;
+src:url(fonts/f4.ttf)format("truetype");
+}
+.style0{
+    font-size:20pt;
+    height: -5;
+    color:rgba(49,51,53,1.00);
+    font-family:Courier New, f0, sans-serif;    
+}
+.style1{
+font-size:11pt;
+color:rgba(49,51,53,1.00);
+font-family:Courier New, f1, sans-serif;
+}
+.style2{
+font-size:11pt;
+color:rgba(112,118,119,1.00);
+font-family:Courier New, f1, sans-serif;
+}
+.style3{
+font-size:9pt;
+color:rgba(193,196,199,1.00);
+font-family:Courier New, f2, sans-serif;
+}
+.style4{
+font-size:12pt;
+color:rgba(49,51,53,1.00);
+font-family:Courier New, f3, sans-serif;
+}
+.style5{
+font-size:10pt;
+color:rgba(49,51,53,1.00);
+background-color:rgba(255,255,255,1.00);
+font-family:Courier New, f4, sans-serif;
+}
+.style6{
+font-size:10pt;
+color:rgba(49,51,53,1.00);
+font-family:Courier New, f4, sans-serif;
+}
+.p_style0{
+text-align:left;
+
+}
+.p_style1{
+text-align:left;
+line-height:12pt;
+}
+.p_style2{
+text-align:left;
+line-height:12pt;
+}
+.p_style3{
+text-align:left;
+line-height:12pt;
+}
+.p_style4{
+text-align:justify;
+line-height:12pt;
+}
+.p_style5{
+text-align:left;
+line-height:12pt;
+}
+.p_style6{
+text-align:left;
+line-height:12pt;
+}
+.p_style7{
+text-align:left;
+line-height:12pt;
+}
+table.bordered {
+border: 1px solid black;
+border-collapse: collapse;
+}
+table.bordered th{
+border: 1px solid black;
+}
+table.bordered td{
+border: 1px solid black;
+}
+table.bordered td.borderless{
+border-top: none;
+border-left: 1px solid black;
+border-right: 1px solid black;
+border-bottom: none;
+}
+table.borderless {
+border: none;
+}
+table.borderless td {
+vertical-align: top;
+}
+ul {
+list-style-type: none;
+padding-left: 0;
+}
+a {
+text-decoration: none;
+color: inherit;
+}
+
+.moveimage
+{
+    position: relative;
+    top: 15px;
+}
