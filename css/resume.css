@@ -129,3 +129,47 @@ color: inherit;
     position: relative;
     top: 15px;
 }
+
+@media(max-width: 500) {
+    .style0
+    .style1
+    .style2
+    .style3
+    .style4
+    .style5
+    .style6
+    .p_style0
+    .p_style1
+    .p_style2
+    .p_style3
+    .p_style4
+    .p_style5
+    .p_style6
+     {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+    }
+}
+
+
+  
+  /* Mobile */
+  @media(max-width: 300px) {
+    .style0
+    .style1
+    .style2
+    .style3
+    .style4
+    .style5
+    .style6
+    .p_style0
+    .p_style1
+    .p_style2
+    .p_style3
+    .p_style4
+    .p_style5
+    .p_style6 {
+      height: 110px ;
+    }}
+    
+  
