@@ -44,6 +44,11 @@ p {
 img {
   width: 100%;
 }
+.hidden {
+  visibility: hidden;
+  height: 0;
+}
+
 /* Showcase */
 .showcase {
   height: 400px;
@@ -155,3 +160,4 @@ img {
 .languages .card:hover {
   transform: translateY(-15px)
 }
+
