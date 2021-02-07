@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Tim Scongack | Project Title</title>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="container flex">
+            <h2 class="logo">Tim Scongack</h2>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="Resume.html">Resume</a></li>
+                    <li><a href="https://github.com/timscongack">Github</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+
+     <!-- Main Article -->
+<section class="languages">
+        <!-- Title -->
+        
+        <h2 class="md text-center my-2">
+        Classification of Poisonous vs. Edible Mushrooms Using Machine Learning/Decision Trees
+        </h2>
+        
+        <!-- Header -->
+        <div class="container">
+        
+        <h3 class="stats-heading text-center my-1">
+        How to use a mushroom dataset as a guide in detecting poisonous vs. edible. This data is available via UCI, but I've put the csv on my github for ease of access.
+        </h3>
+        <!-- Date -->
+        
+        <p class="text-center">
+        10-01-2021   
+        </p>
+        
+        <p class="project_body">
+        The goal of this was to show how to implement a decision tree model to something practical. After a couple of years studying satistics and taking courses I wanted do something with practical application; no matter how small they might be. The dataset and scripts are available on my github.
+        </p>
+        
+        <p class="project_body">
+        There are a serveral models you can use to predict outcomes - but I wanted something that had tracable steps and that could be used as a guide. Many models can input a value, but not show the steps on how they got there; decision trees are different - you visually see the steps that model has taken to get to it's outcome.
+        </p>
+        
+        <h3 class="stats-heading text-center my-1">
+        How I Made this Model
+        </h3>      
+        
+        <p class="project_body">
+        I originally found this dataset in my Applied Machine Learning Course that I took through the University of Michigan. From this dataset we were instructured to find the Gini importance of each features, and then with another unrelated dataset asked to make a decision tree. After determining the importance of each feature, I decided to see how I could transform this into a simple to follow decision tree that could potentially be used to classify edible vs. poisonous mushrooms.
+        </p>
+
+        <p class="project_body">
+        To do this I used Jypyter notebooks, and put all of the data etc. that I'd be working on in a local directory to work on. The steps I followed today are presented in a cleaner order than the steps it took to put this together - I had attempted to input the data into the classifier without doing data-cleanup. This cleanup didn't impact the outcomes but it lead to a dataset/tree that was unreadable. Most of the time I spent in this project was to gain more understanding on how decision trees worked, what a random forest was, what Gini importnace is, and reading documentation on visualizing the tree - then using graphviz to manually populate the tree, and re-labelling the fields or features of the model.
+        </p>
+
+        <h3 class="stats-heading text-center my-1">
+        The Outcome
+        </h3>
+        <p class="project_body">
+        I wanted to produce something that was useful (with some element of risk) to forage (collect) mushrooms. Below is the outcome of this project, using this model the user would be able to look at a mushroom and answer a question, if the answer to that question was true, you would move left on the diagram; if false you move to the right. If you end in a coral coloured node (leaf) it means it is highly likely the mushroom is poisonous, if blue it is edible. As stated, this isn't a flawless model despite the metrics/accuracy score; you need to know the risks associated with this activity, and consult and expert.
+
+        </p>        
+
+        <div class="bg">
+        <img src="images/mushroom.png">
+        </div>
+
+
+    </section>       
+</body>
+</html>
