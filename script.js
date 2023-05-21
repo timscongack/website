@@ -1,14 +1,16 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Check if the current page is not index.html
-    if (window.location.pathname !== '/index.html') {
+    var currentLocation = window.location.href;
+
+    // Check if the current location is the main directory of the website
+    if (!currentLocation.endsWith('/')) {
       // Create the button element
       var button = document.createElement('button');
-      button.textContent = 'Return to Home';
-      button.style.cssText = 'position: fixed; top: 20px; right: 20px; padding: 10px 20px; font-size: 16px; background-color: #1F2739; color: #ffffff; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s, color 0.3s;';
+      button.innerHTML = 'Click Me';
 
-      // Add click event listener to redirect to the home page
+      // Add an event listener to the button
       button.addEventListener('click', function() {
-        window.location.href = 'index.html';
+        // Perform some action when the button is clicked
+        console.log('Button clicked!');
       });
 
       // Append the button to the document body
