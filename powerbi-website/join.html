@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!--Set Encoding and Browser Compatibility-->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!--displays website title-->
+        <title>Contact - PB Dev</title>
+        <!-- Website Information, description, keyboards, and author -->
+        <meta name="description" content="PB Contact Join Form">
+        <meta name="keywords" content="How to Join, Ask a Question, Get Help">
+        <meta name="author" content="Tim Scongack">
+        <!-- Changes view to the width of the device -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--links to CSS documents cdn is for images for accessibility menu, style contains all CSS elements -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+        <link rel="stylesheet" href="css/style.css"><!-- References css file -->
+    </head>
+
+<!--
+    File contents/structure
+
+    Body section contains:P
+    1. Header Primary Nav Bar and responsive elements with logo
+        -Accessibility contract button, and link underlink button injected from assets/header.html
+    2. Main section with contains:
+        -Right side contains image
+        -left side contains a contact form with Description, name, email, help type, message, and send button
+    5. Footer with site linked, address info, and social media info - injected from footer.html
+    **Note Header and Footer are dynamically inserted using the above w3 library
+    Contact form references and sources:
+    https://www.w3schools.com/howto/howto_css_contact_form.asp basic and original outline
+    https://www.youtube.com/watch?v=rpujWVkmiPE tutorial and final design
+    https://codepen.io/masha_tatosh/pen/oNgoyoy containerized design
+
+-->
+<!--body with added parameters to assist with screenreaders-->
+<body data-new-gr-c-s-loaded="14.1067.0" class="readability-mode"><!--Screenreader compatibility tags-->
+    <header w3-include-html="assets/header.html"></header> <!--injects html from assets/header.html-->
+    <main> <!--All the main content of the page-->
+        <button onclick="topFunction()" id="myBtn" title="Go to top" class="fas fa-chevron-circle-up fa-3x"></button> <!--To the top of the page when clicked (from W3 schools tutorial)-->
+        <div class="join-container" id="joinContainer">
+            <div class="left-col" id="join-left-col" role="form"> <!--Left column for the page-->
+                <h1>Join/Contact Us</h1> <!--Title-->
+                <p>Interested in recieving our newsletter or being a support partner? Let us know!</p> <!--Description-->
+                <form id="join-form" name="join-form" method="post"> <!--Form object-->
+                        <label for="name">Full name</label> <!--Name Label-->
+                    <input type="text" id="name" name="name" placeholder="Your Full Name" required> <!--Input for name-->
+                        <label for="email">Email Address</label> <!--Email Label-->
+                    <input type="email" id="email" name="email" placeholder="Your Email Address" required> <!--Input for Email-->
+                        <label class= "type-label" id="selection-title"> What can we help you with?</label> <!--Services/Joining Label-->
+                    <div class="help-selection" id="help-selection" role="listbox"> <!--Selection Menu-->
+                        <label>
+                            <select  id="helpformselect" name="helpformselect"> <!--Selection of the list objects-->
+                            <option value="Join-Option">I want to join the community</option>
+                            <option value="Dev-Option">Development</option>
+                            <option value="ETL-Option">Datasets/ETL</option>
+                            <option value="Training-Option">Training and Mentorship</option>
+                            <option value="Modification-Option">Modify, Repair, Design</option>
+                            </select>
+                        </label>
+                    </div>
+                        <label for="message">Message</label> <!--Message Label-->
+                    <textarea rows="4" placeholder="Your Message" id="message" name="message" required></textarea> <!--Input for Message-->
+                            <button type="submit" id="submit" name="submit">Send</button> <!--Send Button-->
+                    <script src="js/join.js"></script> <!-- references javascript for form-->
+                </form>
+                <div id="error" role="status"></div>
+                <div id="success-msg" role="status"></div>
+            </div>
+            <div class="right-col" id="join-right-col"> <!--Right column for the page-->
+                <img src="img/city.png" class="right-img" id="join-city-image"
+                     alt="Image of a nice city to give off good vibes on this form">
+            </div>
+        </div>
+    </main>
+    <footer w3-include-html="assets/footer.html"></footer><!--injects html from assets/footer.html-->
+    <!--links to javascript components-->
+    <script src="js/app.js"></script> <!--Event listeners and control flow of site-->
+    <script src="js/helper.js"></script> <!--Helper functions for event listeners and control flow of site-->
+</body>
+</html>

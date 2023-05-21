@@ -1,0 +1,1611 @@
+:root { /* Set variables for all colours to reference*/
+  --primary-color: #232323;
+  --secondary-color: #6c6c6c;
+  --dark-color: #002240;
+  --light-color: #f4f4f4;
+  --white: white;
+  --card-background2 : #303032 ;
+  --transparent-black: #414141E4;
+  --tertiary-color: #F5F6FA;
+  --hero:#277d71;
+  --hero-light: #42d4be;
+
+}
+.container { /* Main container for the site */
+  max-width: 1100px;
+  margin: 0 auto;
+  overflow: flexible;
+  padding: 0 40px;
+}
+
+* { /* Format all elements */
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+
+@import url('http://fonts.cdnfonts.com/css/adobe-clean');
+body { /* Setting up font family for the body*/
+  font-family: 'Adobe Clean', sans-serif;
+  color: #333;
+  line-height: 1.6;
+  margin-top: 90px;
+}
+
+header {/* Setting up header components, text components and link components */
+  background-color: white;
+  position:fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  border-bottom: 1px solid var(--primary-color);
+}
+
+ul {/* default list formatting */
+  list-style-type: none;
+}
+
+
+a{ /* format links */
+  text-decoration: none;
+  color: var(--dark-color);
+}
+
+b{ /* format bold text */
+  text-decoration: none;
+  color: var(--light-color);
+}
+
+h1{ /* format general header */
+  font-weight: 300;
+  line-height:1.2;
+  margin: 10px 0;
+  color: var(--lighting-color);
+}
+
+p { /* format general paragraph */
+  margin: 10px 0;
+}
+
+.line { /* line to have a clean delination between sections */
+  height: 20px;
+  background: var(--primary-color);
+  border-radius: 3px;
+  box-shadow: inset 0 0 0.1em 0 white;
+}
+
+#logo {/* Logo sizing and formatting */
+  width: 88px;
+  height: 44px;
+  position: absolute;
+  top: 25px;
+  left: 88px;
+  z-index: 50;
+}
+
+#linkUnderline{ /* Underlines links attached to Javascript toogle for accessibility */
+  top: 25px;
+  width: 45px;
+  height: 44px;
+  left: 0px;
+  position: absolute;
+  z-index: 50;
+  background-color: var(--primary-color);
+  color: var(--light-color);
+  place-items: center;
+}
+
+#toggleColour{/* Toggles colours attached to Javascript toogle for accessibility */
+  top: 25px;
+  width: 45px;
+  height: 44px;
+  left: 45px;
+  position: absolute;
+  z-index: 50;
+  background: var(--primary-color);
+  color: var(--light-color);
+}
+
+.navbar { /* Basic Navbar formatting */
+  background-color: white;
+  color: var(--primary-color);
+  height: 90px;
+  right: 1em;
+  top: 50%;
+
+}
+
+.nav-toggle-label { /*Default Behaviour for Responsive Menu*/
+    display: none;
+  }
+
+#menu { /*Default Menu formatting*/
+    all: unset;
+  }
+
+#menu ul { /*Default Menu list*/
+    display: flex;
+    align-items: right;
+    height: 100%;
+    right: 0px;
+  }
+
+#menu li { /*Menu linking*/
+    margin: .25em;
+    width: auto;
+    word-wrap: break-word;
+  }
+
+.navbar menu {/* Sets the location and colours for the first navbar menu*/
+  background-color: white;
+  color: white;
+  height: auto;
+  position:absolute;
+  left: 10px;
+
+}
+
+/* Sets navbar ul and a elements*/
+.navbar ul { /* Navbar llist items*/
+  display:flex;
+  position:relative;
+  bottom: 5px;
+}
+
+.navbar a { /* Navbar link formatting*/
+  color: var(--primary-color);
+  background-color: white;
+  font-weight: bold;
+  padding: 12px;
+  position:relative;
+  right: 3px;
+  top: 10px;
+  }
+
+.navbar b {/* b navbar components*/
+  color: white;
+  background-color:var(--primary-color);
+  font-weight: bold;
+  padding: 12px;
+  position:absolute;
+  left: 10px;
+  top: 25px;
+  height: 44px;
+  width: 40px;
+}
+
+.navbar .flex { /* justify the flex navbar*/
+  justify-content: space-between;
+}
+
+/* Main Menu Items Hover Behviour*/
+#menu a:hover:not(.active) { /*when hovering over menu links format*/
+  color: var(--secondary-color);
+	transition: 1s;
+}
+
+#menu div:hover:not(.active) { /*for menu five formatting with hovering*/
+  color: var(--primary-color);
+  font-weight: bold;
+	transition: 1s;
+}
+
+#navItems { /*Add some top padding to the nav menu items*/
+  top:20px;
+}
+
+#navItems a:hover:not(.active) { /* Accessibility Items Hover Behviour*/
+  color: var(--primary-color);
+	background-color: white;
+  transition: 1s;
+}
+
+#nav-toggle.nav-toggle { /*Hides the checkbox that controls the responsive menu*/
+  display: none;
+}
+
+div.content { /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: 1000px;
+}
+
+.progress-container { /* Progress Bar background*/
+  background-color: var(--secondary-color);
+  height: 10px;
+  width: 100%;
+  z-index: 100;
+}
+
+.progress-bar { /* Progress Bar background of the scroll area*/
+  background-color: var(--hero-light);
+  height: 10px;
+  width: 0%;
+  z-index: 100;
+}
+
+/* footer section columns, header, text and icon formatting with responseive bahviours */
+.footer-container{ /*some standard formatting of the footer section*/
+	margin:auto;
+}
+
+.row{ /*Flex formatting for the single row of the footer*/
+	display: flex;
+	flex-wrap: wrap;
+}
+ul{ /*No list style*/
+	list-style: none;
+}
+li{ /*Fill list items to space*/
+	text-align: justify;
+}
+.footer{ /*main background colour*/
+  z-index: 1000;
+  background-color: var(--primary-color);
+  padding: 70px 0;
+}
+.footer-col{ /*Footer has 4 columns each 25% width*/
+   width: 25%;
+   padding: 0 15px;
+}
+.footer-col h4{ /*Head size formatting*/
+	font-size: 0.9em;
+	color: #ffffff;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+.footer-col ul li:not(:last-child){ /*The last item of the footer has a margin*/
+	margin-bottom: 10px;
+}
+.footer-col ul li a{ /*Capitalize of header item*/
+	font-size: 0.8em;
+	text-transform: capitalize;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 300;
+	color: white;
+	display: block;
+	transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{ /*hovering within columns bolding*/
+	color: #ffffff;
+	font-weight: bold;
+}
+.footer-col .social-links a{ /*default logo colour values*/
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(255,255,255,0.2);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #ffffff;
+	transition: all 0.5s ease; /*Takes half a second to animate*/
+}
+.footer-col .social-links a:hover{ /*Social link hover behaviour*/
+	color: #24262b;
+	background-color: #ffffff;
+}
+
+/* Text colors */
+.text-primary { /*Main text colours*/
+  color: var(--primary-color);
+}
+
+.text-secondary { /*Secondary text colours*/
+  color: var(--secondary-color);
+}
+
+/* Text sizes and orientation */
+.lead {
+  font-size: 1em;
+}
+
+.text-center { /* Text center elements alignment */
+  text-align: center;
+}
+
+.flex { /* Text sizes and orientation for menus and other components */
+  max-height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.ag-format-container {
+  width: 1142px;
+  margin: 0 auto;
+}
+
+  /* joinus-hero join Us */
+.joinus-hero{ /* container for the hero section */
+  height:250px;
+  background-color:black;
+  background-size:cover;
+  background-repeat:no-repeat;
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-bottom: 1px solid var(--primary-color);
+}
+.joinus-hero .overlay{ /* coloring and formatting of the hero section with low index value */
+  background-color:var(--hero);
+  position:absolute;
+  height:100%;
+  width:100%;
+  z-index:1;
+  left:0;
+  right:0;
+  top:0;
+}
+.joinus-hero .joinus-hero-content{ /*text formatting to front (above index 1*/
+  color: white;
+  z-index:2;
+  text-align:center;
+}
+.joinus-hero .joinus-hero-content h1{ /*large text formattting*/
+  font-size:45px;
+  font-weight:700;
+  font-family: 'Adobe Clean UX', sans-serif;
+
+}
+
+.joinus-hero .joinus-hero-content button{ /* joinus-hero join Us button interaction */
+    display: inline-block;
+    padding: 10px 30px;
+    font-size: 0.8em;
+    top: 20px;
+    cursor: pointer;
+    background: var(--hero);
+    color: white;
+    border: white 1px solid;
+    border-radius: 5px;
+    position: relative;
+    text-transform: capitalize;
+  }
+
+  .joinus-hero .joinus-hero-content button:hover:not(.active) { /*bold all of
+    the join now button items*/
+    border: white 2px solid;
+  }
+
+
+   /* joinus-hero join Us */
+.learn-hero{ /* container for the hero section */
+  height:250px;
+  background-color:black;
+  background-size:cover;
+  background-repeat:no-repeat;
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-bottom: 1px solid var(--primary-color);
+  }
+.learn-hero .overlay{ /* coloring and formatting of the hero section with
+  low index value */
+  background-color:var(--primary-color);
+  position:absolute;
+  height:100%;
+  width:100%;
+  z-index:1;
+  left:0;
+  right:0;
+  top:0;
+  }
+.learn-hero .learn-hero-content{ /*text formatting to front (above index 1*/
+  color: white;
+  z-index:2;
+  text-align:center;
+  }
+.learn-hero .learn-hero-content h1{ /*large text formattting*/
+  font-size:2em;
+  font-weight:700;
+  font-family: 'Adobe Clean UX', sans-serif;
+
+  }
+
+.learn-hero .learn-hero-content button{ /* learn-hero join Us
+  button interaction */
+    display: inline-block;
+    padding: 10px 30px;
+    font-size: 0.8em;
+    top: 20px;
+    cursor: pointer;
+    background: var(--primary-color);
+    color: white;
+    border: white 1px solid;
+    border-radius: 5px;
+    position: relative;
+    text-transform: capitalize;
+  }
+
+.learn-hero .learn-hero-content button:hover:not(.active) { /*bold all of
+  the join now button items*/
+  border: white 3px solid;
+  }
+
+
+/* The Article slider container*/
+.slides { /*Sets the default height for the article slider section*/
+  width: 100%;
+  position: relative;
+  display: block;
+  height: 400px;
+  background-color: var(--tertiary-color);
+  border-bottom: 1px solid var(--primary-color);
+  overflow: hidden;
+
+}
+.slides input { /* hides the radio class used for interaction radios are used to select each HTML element*/
+  display: none;
+}
+
+.slide-container { /* creates the container with auto-sized margins*/
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.slide { /* each slide component with the ease-in-out effect centers the image*/
+  top: 0;
+  opacity: 0;
+  display: block;
+  position: absolute;
+  transform: scale(0);
+  transition: all .7s ease-in-out;
+  width: 100%;
+  height: 110%;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  top: -30px;
+  align-content: center;
+}
+
+.slide h1 { /* Sets the text formatting for article title*/
+  height: 0px;
+  text-align: center;
+  flex-flow: column wrap;
+  font-family: 'Adobe Clean UX', sans-serif;
+  color: var(--light-color);
+  transform: translateY(100px);
+  font-size: 1.7em;
+  font-weight: 400;
+  position: relative;
+}
+
+.slide h1:hover:not(.active) { /*bold on hover over link*/
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.slide p { /* Sets the text formatting for article summary
+  text is 40% of the center of the page*/
+  height: 0px;
+  text-align: center;
+  padding-left: 30%; /*text is 40% of the center of the page*/
+  padding-right: 30%; /*text is 40% of the center of the page*/
+  flex-flow: column wrap;
+  font-family: 'Adobe Clean UX', sans-serif;
+  color: var(--light-color);
+  transform: translateY(150px);
+  font-size: 1.3em;
+  font-weight: 400;
+}
+
+.slide p:hover:not(.active) { /*bold on hover over link*/
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.slide img { /* Sets the image width to have 10%
+  of the page on the right and left*/
+  display: block;
+  max-width: 100%;
+  height: 100%;
+  width: 80%;
+  margin: auto;
+  display: block;
+}
+
+.nav label { /* Sets the right/left arrow buttons*/
+  height: 0px;
+  display: none;
+  position: absolute;
+  cursor: pointer;
+  color: var(--light-color);
+  text-align: center;
+  margin-top: 10%;
+}
+
+.nav label:hover { /*left-right button hover interaction*/
+  color: var(--hero-light);
+}
+/*position both buttons*/
+.nav .next {
+  right: 5px;
+}
+
+.nav .prev {
+  left: 5px;
+}
+/*When the input is checked by arrow ease in and out
+and adjust scale for visual effect and go to next slide*/
+input:checked + .slide-container  .slide {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 1s ease-in-out;
+}
+
+input:checked + .slide-container .nav label {
+  display: block;
+}
+/*dot formatting of the overall section*/
+.nav-dots {
+transform: translateY(50px);
+width: 100%;
+height: 0px;
+display: block;
+position: absolute;
+text-align: center;
+}
+/*specific nav dot formatting*/
+.nav-dots .nav-dot {
+width: 11px;
+height: 11px;
+margin: 0 4px;
+position: relative;
+border-radius: 100%;
+display: inline-block;
+background-color: var(--tertiary-color);;
+left: 0%
+}
+
+.nav-dots .nav-dot:hover {
+cursor: pointer;
+background-color: var(--hero);
+}
+/*if dot is checked then display dot number and some formatting*/
+input#go-to-1:checked ~ .nav-dots label#img-dot-1,
+input#go-to-2:checked ~ .nav-dots label#img-dot-2,
+input#go-to-3:checked ~ .nav-dots label#img-dot-3 {
+background: var(--hero-light);
+}
+
+/*Learn lesson Section*/
+.lessons-section {
+	max-width: 1050px;
+	margin: 32px auto;
+	padding: 32px;
+	background: white;
+  font-family: 'Adobe Clean UX', sans-serif;
+}
+
+.lessons-section h1{
+	max-width: 1050px;
+	background: white;
+  font-family: 'Adobe Clean UX', sans-serif;
+  font-size: 2em;
+  font-weight: 500;
+}
+
+.lessons-section h2{
+	max-width: 1050px;
+	background: white;
+  font-family: 'Adobe Clean UX', sans-serif;
+}
+
+
+.lesson {
+	overflow-x: hidden; /* hides the overflow of the buttons and adds padding and border */
+	margin: 32px 0;
+	padding-bottom: 16px;
+	border-bottom: 2px solid var(--primary-color);
+}
+
+.lesson [type="radio"] {
+	display: none; 	/* hiding the radios */
+}
+
+.tabs { /* sets the table colour and the border of the tabs */
+	display: flex;
+	list-style: none;
+	padding: 0;
+	border-bottom: 1px solid var(--tertiary-color);
+}
+.tab label { /* formatting for tab label */
+  max-width: 12rem;
+  display: block;
+	margin-bottom: -1px;
+	padding: 12px 15px;
+	border: 1px solid var(--tertiary-color);
+	background: white;
+	color: var(--secondary-color);
+	font-size: 12px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	cursor: pointer;
+	transition: all 0.3s;
+}
+.tab:hover label { /* on hover formattting */
+	border-top-color: var(--primary-color);
+	color: var(--primary-color);
+}
+
+.tab-content { /*content formatting*/
+	display: none;
+	color: var(--primary-color);
+}
+
+/* if elements is checked with select the nth items and format it */
+.lesson [type="radio"]:nth-of-type(1):checked ~ .tabs .tab:nth-of-type(1) label,
+.lesson [type="radio"]:nth-of-type(2):checked ~ .tabs .tab:nth-of-type(2) label,
+.lesson [type="radio"]:nth-of-type(3):checked ~ .tabs .tab:nth-of-type(3) label,
+.lesson [type="radio"]:nth-of-type(4):checked ~ .tabs .tab:nth-of-type(4) label {
+	border-bottom-color: #fff; /* remove the button border on selected*/
+	border-top-color: var(--hero);
+	background: #fff;
+	color: #222;
+}
+/* if elements is checked with select the nth items remove formatting */
+.lesson [type="radio"]:nth-of-type(1):checked ~ .tab-content:nth-of-type(1),
+.lesson [type="radio"]:nth-of-type(2):checked ~ .tab-content:nth-of-type(2),
+.lesson [type="radio"]:nth-of-type(3):checked ~ .tab-content:nth-of-type(3),
+.lesson [type="radio"]:nth-of-type(4):checked ~ .tab-content:nth-of-type(4) {
+	display: block;
+}
+
+
+/*Video Container*/
+#video-container  { /* Basic size and bottom border */
+  position: relative;
+  width: 100%;
+  height: 820px;
+  overflow: hidden;
+  z-index: 1;
+  border-bottom: 1px solid var(--primary-color);
+}
+
+#video-container video,
+.video-overlay { /* container and video overlay*/
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+}
+/*Adds transparent black colour over the video bring it to the a really high z index to not have to worried about it*/
+#video-container .video-overlay {
+  z-index: 9998;
+  background: var(--transparent-black);
+  width: 100%;
+}
+
+#video-container .video-content { /* This is the text elements one index value above the video */
+  z-index: 9999;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+/*Video Text Components*/
+#video-container .video-content .inner { /* more text formatting for the inner elements */
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  flex-flow: column wrap;
+  font-family: 'Adobe Clean UX', sans-serif;
+}
+
+#video-container .video-content .inner span {/* more text formatting for the inner elements */
+  font-size: 2em;
+  padding-left: 40px;
+  display: block;
+  margin: 0px;
+  color: var(--white);
+  font-family: 'Adobe Clean UX', sans-serif;
+}
+
+#video-container .video-content .inner h2 { /* more text formatting for h2 */
+  margin-bottom: 0px;
+  margin-top: 14px;
+  padding-left: 40px;
+  font-size: 4em;
+  font-weight: 500;
+  color: var(--white);
+  letter-spacing: 0.5px;
+}
+
+
+/*Contains the Main Article and News Sections on the website*/
+.article-containergrid { /* main article grid atea */
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 10px;
+  padding-bottom: 60px;
+  background-color: var(--tertiary-color); /* very light background colour */
+  border-bottom: 1px solid var(--primary-color);
+}
+
+#article-container-title{ /* title formatting */
+  font-size:  2.2em;
+  color: var(--primary-color);
+  text-align: center;
+  font-weight: 700;
+  position: relative;
+  font-family: 'Adobe Clean UX', sans-serif;
+}
+
+.article-feature-containergrid {  /* main article grid */
+  display: grid;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  max-width: 800px;
+  grid-template-columns: 3fr 1fr;  /* two columns left 75% of width right 25% */
+  grid-template-rows: 0px 1fr 1fr;  /* three rows once invisable, other 50/50 */
+  grid-gap: 1rem;
+  grid-template-areas:  /* this sets the grid layout */
+  "main-feature news"
+  "main-article news-card-1"
+  "main-article news-card-1";
+}
+
+.main-feature {  /* large article section */
+  grid-area: main-feature;
+  max-width: 800px;
+  font-size:  2.2em;
+  color: var(--primary-color);
+  text-align: center;
+  font-weight: 500;
+  position: relative;
+  font-family: 'Adobe Clean UX', sans-serif;
+}
+
+.main-article {  /* large article section grid (within a grid) */
+  display: grid;
+  grid-area: main-article;
+  grid-template-rows: 1fr 30px 30px 30px;  /* picture takes up large section, and text smaller areas */
+  grid-gap: 5px;
+  max-width: 800px;
+  grid-template-areas:  /* grid layout */
+  "article-slider"
+  "published-author"
+  "article-title"
+  "article-body";
+}
+
+.published-author {  /* author section formatting */
+  grid-area: published-author;
+  font-size: 0.9em;
+  left: 24px;
+}
+
+.article-slider { /* article slider formatting section  */
+  height: auto;
+  width: auto;
+  max-width: 800px;
+  background-size:contain;
+  border: 1px solid #CDCDCD;
+  border-radius: 2px;
+}
+
+.article-title { /* Title formatting */
+  grid-area: article-title;
+  font-size:  1.2em;
+  color: var(--primary-color);
+  text-align: center;
+  font-weight: 700;
+  position: relative;
+  font-family: 'Adobe Clean UX', sans-serif;
+
+}
+
+.article-body { /* Article body section */
+  grid-area: article-body;
+  font-size: 1em;
+}
+
+.news { /* new card section fromatting */
+  grid-area: news;
+  max-width: 800px;
+  font-size:  2.2em;
+  color: var(--primary-color);
+  text-align: center;
+  font-weight: 500;
+  position: relative;
+  font-family: 'Adobe Clean UX', sans-serif;
+}
+
+.news-event::before { /* bullets for the new formatting */
+  content: '➤ ';
+  font-size: 0.5em;
+}
+
+.news-card-1  { /* news section card formatting */
+  line-height: 1.5;
+  font-size: 0.5em;
+  font: var(--light-color);
+  min-width: 250px;
+  max-width: 300px;
+  padding: 20px;
+  background-color:var(--primary-color);
+  border-radius: 3px;
+  color: white;
+}
+
+.news-card-1 .news-event {
+  line-height: 1.5;
+  font-size: 0.75em;
+}
+
+/*Text Underline for all links controlled by the accessibility menu*/
+a{text-decoration: none}
+  body.underline a{text-decoration: underline} /* underlines on toggle  */
+li{text-decoration: none}
+  body.underline li{text-decoration: underline} /* underlines on toggle  */
+button{text-decoration: none}
+  body.underline button{text-decoration: underline} /* underlines on toggle  */
+.slides h1{text-decoration: none}
+  body.underline h1{text-decoration: underline} /* underlines on toggle  */
+.slides p{text-decoration: none}
+  body.underline p{text-decoration: underline} /* underlines on toggle  */
+.lessons-section h1{text-decoration: none}
+  body.underline h1{text-decoration: none} /* doesn't underline on toggle (what we want)  */
+.lessons-section p{text-decoration: none}
+  body.underline p{text-decoration: none} /* doesn't underlines on toggle (what we want)  */
+
+/*Services */
+.help-container {
+  margin-top: 100px /* margin to the top of the menu  */
+}
+
+.help-section-header h3 { /* main text for the help/services  */
+  margin-top: 120px;
+  font-size:  2.2em;
+  color: var(--primary-color);
+  text-align: center;
+  font-weight: 700;
+  position: relative;
+  font-family: 'Adobe Clean UX', sans-serif;
+}
+
+.help-section-header p { /* paragraph formatting for the this section  */
+  text-align: center;
+  margin: auto;
+  font-size: 1.2em;
+  padding-bottom: 60px;
+  color: var(--primary-color);
+  width: 50%;
+}
+
+#help {
+  padding: 0px 0 40px 0;
+
+}
+
+#help .help-grid { /* grid for the 4 service elements  */
+  padding-left: 2em;
+  padding-right: 2em;
+  display: grid;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  grid-template-columns: 1fr 1fr; /* 2 equally sized columns  */
+  grid-template-rows: 1fr 1fr; /* 2 equally sized rows  */
+  grid-gap: 1rem;
+  grid-template-areas: /* 4x4 CSS grid layout */
+  "box-flex box-flex"
+  "box-flex box-flex";
+
+}
+
+#help .box { /* box colouring and formatting */
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 0 10px 40px 10px;
+  background: #fff;
+  box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1); /* shawdow for the boarder */
+  transition: all 0.3s ease-in-out; /* moves out in 1/3 of a second  */
+  text-align: center;
+}
+
+#help .box p { /* center the text */
+  text-align: center;
+}
+
+#help .box:hover { /* make the box 5% larger on hover  */
+  transform: scale(1.05);
+}
+
+#help .icon {
+  margin: 0 auto 18px auto;
+  padding-top: 18px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  color: var(--hero-light); /* icon default color  */
+  background: var(--primary-color);
+}
+
+#help .icon .service-icon { /* uicon formatting  */
+  font-size: 1.8em;
+  line-height: 1;
+}
+
+#help .title { /* title formatting  */
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 0.9em;
+  width: 100%;
+}
+
+#help .title a { /* text for default coloring  */
+  color: #111;
+}
+
+#help .box:hover .title a { /* change text colour on hover  */
+  color: var(--hero);
+}
+#help .box:hover .title a:hover {
+  text-decoration: none;
+}
+#help .description { /* description section formatting  */
+  font-size: 0.9em;
+  line-height: 28px;
+  margin-bottom: 0;
+  text-align: left;
+}
+
+/*Join AKA Contact Form CSS **/
+#joinContainer { /* main container coloring slite offwhite */
+  display: flex;
+  width: 100vw;
+  height: auto;
+}
+
+#join-left-col { /* left section formatting  */
+  background: var(--tertiary-color);
+  width: 50%;
+  height: auto;
+  padding-left: 4em;
+  padding-right: 3em;
+}
+
+#joinContainer h1, label, button, .description {  /* font formatting for most page text  */
+  font-family: 'Adobe Clean UX', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+}
+
+#joinContainer h1 {  /* make head uppercase and space/capitalize  */
+  color: black;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  letter-spacing: 0.5rem;
+  font-weight: 300;
+}
+
+#joinContainer p {  /* paragraph formatting  */
+  color: var(--secondary-color);
+  font-size: 0.9rem;
+  letter-spacing: 0.01rem;
+  width: 50%;
+  margin: 0.25rem 0;
+}
+
+#joinContainer label, .description {  /* description formatting */
+  color: var(--secondary-color);
+  text-transform: uppercase;
+  font-size: 0.625rem;
+}
+
+#joinContainer form {  /* make form 50% of the screen  */
+  width: 50%;
+  position: relative;
+  margin-top: 2rem;
+  padding: 1rem 0;
+}
+
+#joinContainer input, textarea, label {  /* formatting for inputting */
+  width: 40vw;
+  display: block;
+}
+
+#joinContainer p, placeholder, input, textarea {  /* formatting for input paragraph */
+  font-family: 'Adobe Clean UX', sans-serif;
+}
+
+#joinContainer input::placeholder, textarea::placeholder { /* formatting for placeholder items */
+  color: var(--primary-color);
+}
+
+#help-selection button,input { /* format for button and input section */
+  width: auto;
+  height: 1em;
+  border: none;
+  padding-left: em;
+}
+
+#joinContainer input, textarea { /* formatting for the tect areas */
+  color: var(--primary-color);
+  font-weight: 500;
+  background: var(--tertiary-color);
+  border: none;
+  border-bottom: 1px solid var(--secondary-color);
+  padding: 0.5rem 0;
+  margin-bottom: 1rem;
+  outline: none;
+}
+
+
+#joinContainer textarea {
+  resize: none;
+}
+
+#joinContainer button { /* button formatting - blending into background */
+  text-transform: uppercase;
+  font-weight: 500;
+  font-weight: bold;
+  background: var(--button-color);
+  color: var(--primary-color);
+  width: 10rem;
+  height: 2.25rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+#joinContainer input:hover, textarea:hover, button:hover { /* see through on hover over */
+  opacity: 0.5;
+}
+
+#joinContainer button:active {
+  opacity: 0.8;
+}
+
+#join-city-image {
+  border-left: 1px solid var(--primary-color);
+}
+
+/* Report Section */
+#report {
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+#report h1 { /* Report Header formatting */
+  margin-top: 120px;
+  font-size:  2.2em;
+  color: var(--primary-color);
+  text-align: center;
+  font-weight: 700;
+  position: relative;
+  font-family: 'Adobe Clean UX', sans-serif;
+}
+
+#report h4 { /* Report Header formatting */
+  margin-top: 1.2em;
+  font-size:  1.6sem;
+  color: var(--primary-color);
+  text-align: center;
+  font-weight: 700;
+  position: relative;
+  font-family: 'Adobe Clean UX', sans-serif;
+  padding-bottom: 1em;
+}
+
+#report p { /* Report paragraph formatting */
+  margin-top: 1em;
+  text-align: left;
+  margin: auto;
+  font-size: 1em;
+  color: var(--primary-color);
+  padding-bottom: 1em;
+}
+
+#report ol { /* Report numbered formatting */
+  margin-top: 1em;
+  text-align: center;
+  margin: auto;
+  font-size: 1em;
+  color: var(--primary-color);
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+#report li { /* Report list formatting */
+  margin-top: 1em;
+  text-align: left;
+  margin: auto;
+  font-size: 1em;
+  color: var(--primary-color);
+  padding-bottom: 1em;
+}
+
+#report img { /* Report img formatting */
+  width: auto;
+  height: auto;
+  max-width: 150%;
+  max-height: 100%;
+}
+
+#report a { /* Report link formatting */
+  color:var(--hero);
+}
+
+#report div { /* Report Div formatting */
+  border-bottom: 0px white;
+}
+
+
+/*All media queries*/
+
+/* On screens that are less than 1150px wide, make the sidebar into a topbar */
+@media screen and (max-width: 1150px) {
+
+  .slide img { /* Changes article slide to fit images on changes */
+    display: block;
+    max-width:1000px;
+    max-height:400px;
+    width: auto;
+    height: auto;
+  }
+
+  .slide h1 { /* Sets the text formatting for article title*/
+    font-size: 1.5em;
+  }
+
+  .slide p { /* Sets the text formatting for article summary text is 40% of the center of the page*/
+    font-size: 1.1em;
+  }
+
+  .article-containergrid { /* Adds minimal padding on article changes */
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .article-container-title { /* Move to the list */
+    text-align: left;
+  }
+
+  .article-slider {
+    /*Give a fixed size to the image abd adjust sizes*/
+    object-fit: cover;
+    height: 20em;
+    width: 100%;
+    left: 0px;
+    width: auto;
+    height: auto;
+    max-width: 694px;
+    max-height: 430px;
+    margin-left: auto;
+    margin-right: auto;
+    grid-area: article-slider;
+    border: 1px solid #CDCDCD;
+    border-radius: 2px;
+    background-color: black;
+  }
+  .article-feature-containergrid { /* change the grid config */
+    display: grid;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+    align-content: center;
+    grid-template-columns: 1fr 1fr; /* two columns only main article appears as one */
+    grid-gap: 1rem;
+    grid-template-areas:
+    "main-feature main-feature"
+    "main-article main-article"
+    "main-article main-article"
+    "news news" /* Moved the news to the bottom */
+    "news-card-1 news-card-1";
+  }
+
+  .news-card-1 { /* auto adjust margins */
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .main-feature { /* align on size change */
+    grid-area: main-feature;
+    font-size:  2.2em;
+    color: var(--primary-color);
+    text-align: center;
+    font-weight: 500;
+    position: relative;
+    font-family: 'Adobe Clean UX', sans-serif;
+  }
+}
+
+/* On screens that are less than 915px wide, make the sidebar into a topbar */
+@media screen and (max-width: 915px) {
+
+  .join-container img { /*bold all of*/
+    display: none !important;
+  }
+
+
+  .tab {
+    max-width: 7rem;
+  }
+
+  .tab label{ /*Tab element modification for smaller screens*/
+    padding: 0px;
+    font-size: .5em;
+    z-index: 999;
+    height: 5em;
+  }
+
+  .nav-toggle-label {   /*Responsive CSS for Hamburger Mentu*/
+    position: absolute;
+    right: 0px;
+    margin-right: 1em;
+    height: 80%;
+    width: 5em;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    z-index: 1;
+    top: 1em;
+  }
+
+  .nav-toggle-label span,
+  .nav-toggle-label span::before,
+  .nav-toggle-label span::after { /*These are all the hamburger menu lines*/
+    display: block;
+    background: var(--primary-color);
+    height: 3px;
+    width: 30px;
+    border-radius: 2px;
+    position: relative;
+    transition: all .5s ease-in-out; /*transition on animation*/
+  }
+
+  .nav-toggle-label span::before,
+  .nav-toggle-label span::after {
+    content: '';
+    position: absolute; /*absolute positioning so it doesn't change*/
+  }
+
+  .nav-toggle-label span::before {
+    bottom: 10px;
+  }
+  .nav-toggle-label span::after {
+    top: 10px;
+  }
+  /*This blends the middle line on the hamburger menu into header*/
+  #nav-toggle:checked ~ .nav-toggle-label span {
+    background: var(--white);
+  }
+
+  /* transforming the before and after to animate the lines into an 'X'*/
+  #nav-toggle:checked ~ .nav-toggle-label span::before {
+  /*rotate first line when checked*/
+    background: var(--primary-color);
+    transform: rotate(45deg);
+    bottom: 0;
+  }
+  /*rotate second line when checked*/
+  #nav-toggle:checked ~ .nav-toggle-label span::after {
+    background: var(--primary-color);
+    transform: rotate(-45deg);
+    top: 0;
+  }
+
+  #joinContainer h1 {  /* shrink contact us title  */
+    color: black;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    text-align: center;
+    letter-spacing: 0.5rem;
+    font-weight: 300;
+  }
+
+
+  /*Build of the menu*/
+  #menu {
+    position: absolute;
+    left: 0em;
+    right: 0em;
+    background: var(--tertiary-color);
+    text-align: center;
+    top: 100%;
+    width: 100%;
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform .2s ease-in-out; /*fast 20% of second transition*/
+    border-bottom: 1px solid var(--primary-color);
+  }
+
+  #menu ul { /*a single menu column for the burger menu*/
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    padding-bottom: 10px;
+  }
+
+  #menu li {  /*fill list items to the full width otherwise odd white spacing*/
+    display: flex;
+    width: 100%;
+    padding-top: 5px;
+  }
+
+  #menu a { /*each menu item has slight transition easing*/
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: 1em;
+    opacity: 0;
+    transition: opacity .15s ease-in-out;
+    width: 100%;
+    text-align: center;
+  }
+
+  #nav-toggle a:hover {
+    color: var(--hero);
+  }
+
+  #nav-toggle:checked + #menu {
+    transform: scale(1, 1);
+  }
+  #nav-toggle:checked ~ #menu a {
+    opacity: 1;
+    transition: opacity .25s ease-in-out .35s;
+  }
+
+  #join-left-col { /*join left column takes up whole page under 800px*/
+    width: 100%;
+  }
+
+  .article-slider {
+    /*Give a fixed size to the image*/
+    left: 0px;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+  }
+  .article-card { /*article card is 50% at 800px*/
+    width: 50%;
+  }
+
+  .article-feature-containergrid {
+    display: grid;
+    width: 100%;
+    z-index: 1;
+    grid-template-columns: 1fr 1fr; /*two columns but article is under one*/
+    grid-template-rows: 30px 1fr 1fr; /*3 rows*/
+    grid-gap: 1rem;
+    grid-template-areas:
+    "main-feature main-feature"
+    "main-article main-article"
+    "main-article main-article"
+    "news news" /*news header and news cards 1 in 2 columns*/
+    "news-card-1 news-card-1"
+;
+  }
+  .help-section-header {
+      width: 100%; /*full width*/
+    }
+
+  .learn-hero .learn-hero-content h1{ /*large text formattting*/
+    font-size:1.5em;
+    font-weight:700;
+    font-family: 'Adobe Clean UX', sans-serif;
+  }
+
+  .joinus-hero .joinus-hero-content h1{ /*large text formattting*/
+    font-size:1.5em;
+    font-weight:700;
+    font-family: 'Adobe Clean UX', sans-serif;
+  }
+
+.slide img { /* Changes article slide to fit images on changes locking aspect ratio */
+  display: block;
+  max-width:1000px;
+  max-height:400px;
+  width: auto;
+  height: auto;
+}
+
+.slide h1 { /* Sets the text formatting for article title*/
+  transform: translateY(150px);
+}
+
+.slide p { /* Sets the text formatting for article summary
+  text is 40% of the center of the page*/
+  transform: translateY(200px);
+}
+}
+/* On screens that are less than 500px, display the bar vertically, instead of horizontally */
+@media screen and (max-width: 500px) {
+  .tab {
+    max-width: 5rem;
+  }
+
+  .tab label{ /*Tab element modification for smaller screens*/
+    padding: 0px;
+    font-size: 6px;
+    z-index: 999;
+  }
+
+  .slide h1 { /* Sets the text formatting for article title*/
+    font-size: 1.2em;
+  }
+
+  .slide p { /* Sets the text formatting for article summary text is 40% of the center of the page*/
+    font-size: .9em;
+    font-weight: 900;
+  }
+
+  /* Articles Card elements on screens that are less than 500px*/
+  .article-card {
+    width: 150px;
+    height: 150px;
+  }
+  /* Changes Top padding */
+  .article-containergrid {
+    padding-top: 50px;
+  }
+  /* Centers the footer for small screens */
+  .footer{
+    text-align: center;
+    border-top: 1px solid var(--primary-color);
+  }
+
+  .footer-col a{
+    text-align: center;
+  }
+
+  /* The Article Topic sticker on screens that are less than 500px*/
+  .sticker {
+    display: none;
+  }
+  /* The Article button to press to read the article with animation on screens that are less than 500px*/
+  .card-btn {
+    display: none;
+  }
+
+  /* The Article black box to see the white text on screens that are less than 500px*/
+  .article-info {
+    transform: translateY(-50%);
+
+  }
+  /* The Article Title text on screens that are less than 500px*/
+  .article-brand {
+    text-transform: uppercase;
+    font-size: 1.2em;
+    text-align: left;
+  }
+  /* The Article description text on screens that are less than 500px*/
+  .article-short-description {
+    display: none;
+  }
+  .main-feature{
+    font-size: 1.8em;
+  }
+  .article-title { /*change article title size*/
+    grid-area: article-title;
+    font-size: 1.4em;
+  }
+
+  .article-body {  /*change article body size*/
+    grid-area: article-body;
+    font-size: 1.2em;
+  }
+
+  #help .help-grid { /*1 column 1 item per row in each frame*/
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    "box-flex"
+    "box-flex"
+    "box-flex"
+    "box-flex";
+  }
+
+
+  .article-feature-containergrid { /*for very small screen put it all in one column with the same span*/
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "main-feature"
+    "main-article"
+    "main-article"
+    "news"
+    "news-card-1"
+    "news-card-1";
+  }
+
+  .main-article {
+    display: grid;
+    grid-area: main-article;
+    grid-template-rows: 1fr 4em 5em 1fr; /*sub grid of article all in a sinlge column in many rows with larger elements in one frame*/
+    grid-gap: 5px;
+    max-width: 800px;
+    grid-template-areas:
+    "article-slider"
+    "published-author"
+    "article-title"
+    "article-body";
+  }
+
+  }
+
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+@media screen and (max-width: 400px) {
+  /*Hide these on really small screen*/
+  .navbar a {
+    float: none;
+  }
+  .logo-image {
+    display: none;
+  }
+  .slide h1 { /* Sets the text formatting for article title*/
+    font-size: .9em;
+  }
+
+  .slide p { /* Sets the text formatting for article summary text is 40% of the center of the page*/
+    font-size: .9em;
+    font-weight: 100;
+  }
+}
+
+/* On screens that are less than 200px, remove logo and move right menu over to right*/
+@media screen and (max-width: 200px) {
+  /*Hide these on really small screen*/
+  #logo {
+    display: none;
+  }
+}
+
+/*This contains the high contrast colours for the accessibility button High Contrast*/
+.highcontrast {
+  --primary-color: black;
+  --secondary-color: black;
+  --dark-color: black;
+  --light-color: white;
+  --white: white;
+  --card-background2 : black;
+  --transparent-black: black;
+  --hero:black;
+  --tertiary-color: white;
+}
+
+#myBtn { /* click to go to top button from w3 schools https://www.w3schools.com/howto/howto_js_scroll_to_top.asp */
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: var(--primary-color); /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 18px; /* Increase font size */
+}
+
+#myBtn:hover {
+  background-color: var(--hero-light); /* Add a dark-grey background on hover */
+}
+

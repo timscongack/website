@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mushroom Classification</title>
+  <link rel="stylesheet" href="mushroom/article.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+  <script src="script.js"></script>
+</head>
+<body>
+   <header class="header">
+    <h1 class="header-title">Classification of Poisonous vs. Edible Mushrooms Using Machine Learning/Decision Trees</h1>
+    <nav class="header-nav">
+    <a class="header-nav-link" href="index.html" target="_blank"><i class="fas fa-home"></i></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="content-section">
+
+      <p>Discover how a mushroom dataset can guide you in distinguishing between poisonous and edible mushrooms. This data, conveniently available through UCI, is also hosted on my GitHub for easy access.</p>
+
+      <p>This project aims to demonstrate the implementation of a decision tree model in a practical context. After a couple of years spent studying statistics and enrolling in various courses, I was eager to apply what I've learned, no matter how seemingly insignificant. You can find both the dataset and the scripts used on my GitHub.</p>
+
+      <p>Several models can be utilized to predict outcomes, but I desired a model that offers traceable steps and could serve as a guide. Unlike many models that output a result without revealing the journey, decision trees differ – you can visually comprehend the steps the model undertook to arrive at its conclusion.</p>
+
+      <h3 class="sub-title">How I Created this Model</h3>
+
+      <p>I first encountered this dataset in my Applied Machine Learning Course at the University of Michigan. The dataset was utilized as a teaching tool for identifying the Gini importance of each feature. Additionally, we were tasked to construct a decision tree using another unrelated dataset. Upon discerning the significance of each feature, I was intrigued to see if I could turn this into a comprehensible decision tree that could possibly classify mushrooms as edible or poisonous.</p>
+
+      <p>To achieve this, I used Jupyter notebooks and created a local directory for all the data and other elements I would be working on. The steps I followed are presented here in a more organized sequence than the actual process - initially, I attempted to input the data into the classifier without performing data cleanup. While this didn't affect the outcomes, it resulted in an unreadable dataset/tree. The bulk of my project time was dedicated to gaining a deeper understanding of decision trees, what a random forest is, what Gini importance implies, and reading documentation on visualizing the tree. I used Graphviz to manually populate the tree and relabel the fields or features of the model.</p>
+
+      <h3 class="sub-title">The Outcome</h3>
+
+      <p>My objective was to create a useful tool for mushroom foragers, despite the inherent risk in such activity. The result of this project is presented below. Using this model, a user can examine a mushroom and answer a question. If the answer to that question is true, you move left on the diagram; if false, you move to the right. A coral-colored node (leaf) signifies that it is highly likely the mushroom is poisonous, while a blue one indicates it's edible. Despite the model's accuracy score, it isn't flawless. Always be aware of the risks associated with this activity, and consult an expert.</p>
+
+      <img src="mushroom/mushroom.png" alt="Mushroom Classification Image" class="classification-image">
+    </section>
+  </main>
+
+  <footer class="footer">
+    <nav class="footer-nav">
+        <a href="https://www.linkedin.com" target="_blank" class="header-nav-link"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.github.com" target="_blank" class="header-nav-link"><i class="fab fa-github"></i></a>
+        <a href="index.html" target="_blank" class="header-nav-link"><i class="fas fa-home"></i></a>
+        <a href="mailto:timscongack@gmail.com" class="header-nav-link"><i class="fas fa-envelope"></i></a>
+    </nav>
+    <div class="footer-content">
+      <p id="copyright"></p>
+      <button onclick="scrollToTop()" id="scrollBtn">Scroll to Top</button>
+    </div>
+  </footer>
+
+  <script>
+    // Get current year for copyright
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

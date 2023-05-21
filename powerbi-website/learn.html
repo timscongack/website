@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!--displays website title-->
+        <title>Learn - PB Dev</title>
+        <!-- Website Information, description, keyboards, and author -->
+        <meta name="description" content="Learn the Basic Structure of PowerBI">
+        <meta name="keywords" content="Learn PowerBI, How does PowerBI work, Explination of PowerBI">
+        <meta name="author" content="Tim Scongack">
+        <!-- Changes view to the width of the device -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--links to CSS documents cdn is for images for accessibility menu, style contains all CSS elements -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" /> <!-- References cdn for accessibility icons -->
+        <link rel="stylesheet" href="css/style.css"> <!-- References css file -->
+    </head>
+
+<!--
+    File contents/structure:
+
+    Body section contains
+    1. Step by Step Outline of each of the elements of PowerBI by
+    lesson and lession tabbed sections
+    2.Article slider injected at the bottom for the user to learn more
+
+    This section was heavily influenced by, which in turn influenced the article slider, and
+    contact form components that used a similar method:
+
+    https://medium.com/allenhwkim/how-to-build-tabs-only-with-css-844718d7de2f
+    https://stackoverflow.com/questions/52956963/how-to-make-the-radio-buttons-with-tabs-work-in-pure-css
+    https://codepen.io/noisefactor/pen/jqyMLQ
+    https://codepen.io/MPDoctor/pen/mpJdYe
+-->
+<!--body with added parameters to assist with screenreaders-->
+<body data-new-gr-c-s-loaded="14.1067.0" class="readability-mode"> <!--Screenreader compatibility tags-->
+    <header w3-include-html="assets/header.html"></header> <!--injects html from assets/header.html-->
+    <main> <!--All the main content of the page-->
+        <button onclick="topFunction()" id="myBtn" title="Go to top" class="fas fa-chevron-circle-up fa-3x"></button> <!--To the top of the page when clicked (from W3 schools tutorial)-->
+        <section class="lessons-section"> <!--This is the main container for the whole section-->
+            <h1>What is PowerBI?</h1> <!--Title-->
+
+            <p>PowerBI is a Microsoft application that allows users to load and
+                transform datasets in a programmatic way and then visualize and
+                display data in a specific format. Unlike excel which has a
+                ‘cell space’ PowerBI uses a relational table structure; a series
+                of tables connected together using matching columns. To add, PowerBI
+                has an online service that controls data permissions, data refreshes,
+                a notification system, and acts as a dataset server for pre-structured
+                datasets - this service is where the users interact with data. </p> <!--Description-->
+
+            <div class="lesson"> <!--The first lession section radio elements are hidden-->
+                <input type="radio" id="tab1" name="css-tabs" checked> <!--Each Radio, which controls the tabs, this one is default-->
+                <input type="radio" id="tab2" name="css-tabs"><!--selection-->
+                <input type="radio" id="tab3" name="css-tabs"><!--selection-->
+                <input type="radio" id="tab4" name="css-tabs"><!--selection-->
+                <h2>The Layers of PowerBI</h2> <!--Lession text-->
+                <ul class="tabs"> <!--Tab Values and formatting, tab list items-->
+                    <li class="tab"><label for="tab1">1 - PowerQuery</label></li>
+                    <li class="tab"><label for="tab2">2 - DAX</label></li>
+                    <li class="tab"><label for="tab3">3 - Visualization</label></li>
+                    <li class="tab"><label for="tab4">4 - Web/Service</label></li>
+                </ul>
+
+                <div class="tab-content"> <!--Tab Content-->
+                    <h4>PowerQuery Layer</h4> <!--Tab Header-->
+                    <p>Also known as the 'Transform Data' Section. This layer contains API connectors which connect to external or local data sources (extract).
+                       From the user's perspective this section or layer of the application is where you go to load in the data
+                       modify using 'M', the PowerQuery GUI or other languages like SQL, Python or R.
+                    </p> <!--Lesson Content-->
+                </div>
+
+                <div class="tab-content"> <!--Tab Content-->
+                    <h4>DAX Layer</h4> <!--Tab Header-->
+                    <p>The DAX layer is where you'll likely interact with PowerBI most of the time. This is where you
+                        define you table relationships, create visuals, and make measures. This layer is the most feature rich
+                        part of PowerBI and this is where PowerBI's performance is the most optimized.
+                    </p> <!--Lesson Content-->
+                </div>
+
+                <div class="tab-content"> <!--Tab Content-->
+                    <h4>Visualization Layer</h4> <!--Tab Header-->
+                    <p>This the layer where individual visual sit, and where you can customize them.
+                        Another option here is to use some of the pre-build aggregation functions like sum,
+                        count, average - however, it is always recommend for cleaniness you use user-defined
+                        dax calculations and functions.
+                    </p> <!--Lesson Content-->
+                </div>
+                <div class="tab-content"> <!--Tab Content-->
+                    <h4>PowerBI Service Layer</h4> <!--Tab Header-->
+                    <p>This is the component of PowerBI that sits on the cloud and it what really gives PowerBI
+                       it's distributive capabilities and seperates it from applications like Microsoft Excel.
+                       It allows for row-level permissions, and viewing of data
+                       by end users. This layer also has notifications and triggers which can be used, along with
+                       triggers to refresh data.
+                    </p> <!--Lesson Content-->
+                </div>
+            </div>
+            <p>PowerBI in many ways is a number of interconnected Microsoft Applications that work together, and
+                communicate with each other. The goal of this application is to show visual abstractions of data
+                for business users (graphs, and tables); so the information can be interpreted and analyzed. </p> <!--Lesson Content-->
+            <p>Now that you understand the different layers and structure of PowerBI we'll provide a notion of more
+                components of those layers in PowerBI Desktop, as they are presented in the application.
+            </p> <!--Lesson Content-->
+            <div class="lesson"> <!--The first lession section radio elements are hidden-->
+                <input type="radio" id="tab21" name="css-tabs2" checked>
+                <input type="radio" id="tab22" name="css-tabs2">
+                <input type="radio" id="tab23" name="css-tabs2">
+                <ul class="tabs"> <!--Tab Values and formatting, tab list items-->
+                    <li class="tab"><label for="tab21">1 - Tranform Data</label></li>
+                    <li class="tab"><label for="tab22">2 - Main Screen</label></li>
+                    <li class="tab"><label for="tab23">3 - Visuals</label></li>
+                </ul>
+
+                <div class="tab-content"> <!--Tab Content-->
+                    <h4>Transform Data</h4> <!--Tab Header-->
+                    <p>1. API connectors that connect to external or local data sources (extract).</p> <!--Lesson Content-->
+                    <p>2. Transform or PowerQuery uses ‘M’, Python, SQL, and R.</p> <!--Lesson Content-->
+                    <p>3. Validation compiler - this validates the PowerBI data after the ETL has been performance
+                       and returns and error message if there are any conflicts or issues with the processing.</p> <!--Lesson Content-->
+                </div>
+
+                <div class="tab-content"> <!--Tab Content-->
+                    <h4>Main Screen</h4> <!--Tab Header-->
+                    <p>The main screen contains a menu like many other Microsoft applications at the top, along with a measure edit menu similar to MS Excel.</p> <!--Lesson Content-->
+                    <p>On the right are various layers, with the datasets, measures, columns being on the far right, with filters on the far left of this pane.</p> <!--Lesson Content-->
+                    <p>The main screen and tabs is the visualization area. On the far right you'll see 3 tabs in which you can look at the visualizations, data, or data schema. Recommend
+                       You toggle between these as you create measures and add Datasets
+                    </p> <!--Lesson Content-->
+                </div>
+
+                <div class="tab-content"> <!--Tab Content-->
+                    <h4>Each Visual</h4> <!--Tab Header-->
+                    <p>Each visual can be edited, and it's filters can be determine by many slicers. Click on the visual to edit, and use the GUI on the right
+                       to change features. This is a huge enchancement of Mircosoft's previous SSRS reports.
+                    </p> <!--Lesson Content-->
+                </div>
+            </div>
+            <p>PowerBI allows users (dashboard creator) to ETL (extract load and transform) and
+                creates Data Visualizations. PowerBI abstracts data in a relational table structure
+                for the user (dashboard creator); a series of tables connected together using
+                matching columns. PowerBI handles data in a columnar database structure,
+                however, generates a relational structure for the dashboard creator.
+                This design decision made by Microsoft makes the DAX language unintuitive
+                unlike SQL whose syntax matches that of language.</p> <!--Wrap up content-->
+            </section>
+    </main>
+    <footer w3-include-html="assets/footer.html"></footer><!--injects html from assets/footer.html-->
+    <!--links to javascript components-->
+    <script src="js/app.js"></script> <!--Event listeners and control flow of site-->
+    <script src="js/helper.js"></script> <!--Helper functions for event listeners and control flow of site-->
+</body>
+</html>

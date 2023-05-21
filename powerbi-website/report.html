@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!--Set website encoding and browser compatibility-->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!--displays website title-->
+        <title>PB Dev</title>
+        <!-- Website Information, description, keyboards, and author -->
+        <meta name="description" content="Report">
+        <meta name="keywords" content="Perfect Assignment, 100% Grade XD">
+        <meta name="author" content="Tim Scongack">
+        <!-- Changes view to the width of the device -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--links to CSS documents cdn is for images for accessibility menu, style contains all CSS elements -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+<!--
+    File contents/structure:
+
+    Body section contains
+    1. Header injected from header.html
+    2. Main section with contains:
+        -Report Intro
+        -Inspiration
+        -Accesibility
+        -Usability
+        -Learning
+        -Eval Successes
+        -Eval Failures
+        -Resources
+        -Appendices
+    3. Footer injected from footer.html
+-->
+<!--body with added parameters to assist with screenreaders-->
+<body data-new-gr-c-s-loaded="14.1067.0" class="readability-mode"> <!--Screenreader compatibility tags-->
+    <header w3-include-html="assets/header.html"></header> <!--injects html from assets/header.html-->
+        <main> <!--All the main content of the page-->
+            <button onclick="topFunction()" id="myBtn" title="Go to top" class="fas fa-chevron-circle-up fa-3x"></button> <!--To the top of the page when clicked (from W3 schools tutorial)-->
+            <section class="report-section" id="report">
+                <h1>PowerBI Community Website - PB Dev</h1>
+                <h4>Author: Tim Scongack</h4>
+
+                <p>Learning a new technology can be difficult. As a new application, programming language, or framework is learned, one collects concepts and how these concepts work together, which can be confusing. Learning the notional structure and where those concepts attach themselves becomes clear. But what if one could approach learning about a particular subject with the notional aspects/scaffolding outlined intuitively? What if you had a network of other enthusiasts you could submit questions to and interact with? PB Dev is a community site that outlines these fundamental concepts for Microsoft's PowerBI Application. The site has the following objectives:&nbsp;</p>
+                <ol>
+                   <li>Outline PowerBI intuitively.</li>
+                   <li>Share News and Articles about PowerBI</li>
+                   <li>Connect those with unique questions to our community mailing group and to offer companies and individuals support</li>
+                   <li>Provide learning resources for those wanting to learn how to use PowerBI.</li>
+                </ol>
+                <h4>The site structure is comprised of:</h4>
+                <ol>
+                   <li>The Home Page - This contains a banner describing what the community does, followed by two sections linking to learning how PowerBI works and our contact us section.</li>
+                   <li>Learn Page - Step-by-Step walkthrough of notionally how PowerBI works as an application.</li>
+                   <li>Article Page - This contains the content summary of critical PowerBI articles and news for the user to access.</li>
+                   <li>The Community Services Page (links to selected contact form options) allows users to choose what they need help with based on the offered services.</li>
+                   <li>The Contact Page - Contains a basic contact form to reach out - PB Dev manages the routing of questions to the community.</li>
+                </ol>
+                <h4>Inspiration</h4>
+                    <p>The inspiration concept for this website came from <a href="https://radacad.com/" target="_blank" rel="noopener">RADACAD</a>, <a href="https://www.youtube.com/c/CurbalEN" target="_blank" rel="noopener">Curbal</a>, and <a href="https://www.sqlbi.com/" target="_blank" rel="noopener">SQLBI</a>. One goal of the site is to provide a scaffolding that outlines the basics of PowerBI for new users, provide them with self-help and resources, and allow them to connect with experts to guide/mentor or directly support them. However, despite the quality of content that inspired this site - which is much beyond this site -&nbsp; it was always confusing to know where to start. Also, asking questions on the Microsoft forum and getting comprehensive help can be challenging.</p>
+                    <p>As for the design of this website - many elements were inspired by Bonza.se - a Swedish Design Studio that provides various design services. Looking through the portfolio of projects, their website design is clean, simple, and colorful.&nbsp;</p>
+                    <p>Adobe&rsquo;s website and the UI of their Creative Suite were also inspiring - the site uses Adobe font families. When looking at the Creative Suite UI, it was noticed minimal coloring was used. It was clear that this site could have a simple-looking and atheistically pleasing design by having several black, white, and greyscale elements while incorporating a few select bright colors.&nbsp;</p>
+                <h4>Accessibility</h4>
+                    <p>The site is designed to be readable with a screenreader. This means that tags in the HTML are appropriate for their purpose, including the language tag on the site, so the reader knows what language to read it in. The site also uses ARIA roles to help the user navigate, and uses alt text to describe the elements explicitly.</p>
+                    <p>Next, the site allows users to toggle underlined links and toggle for a high contrast back-white color scheme. This is done using Javascript to reference different sets of default color variables. Overall, the site uses high-contrast colors, so depending on the user&rsquo;s level of color blindness, the toggle contrast may not have to be used.&nbsp;</p>
+                    <p>Finally, the site can be navigated with relative ease using a keyboard, including the contact-us forms on the website. All of this is possible while having modular HTML injected on the server-side.</p>
+                    <p>When the user accesses the website, we want to make the priorities of the site clear: (1) Why this community exists and how it can help the user, (2) How to understand PowerBI Notionally, (3) How they can reach out with questions, and (4) What resources can they use to learn more about PowerBI. This is done by stating the purpose of the community in a looped video banner, then linking to the pages in accordingly.&nbsp;</p>
+                    <p>As with many sites, the header or primary navigation bar is the direct way for users to move across the site. This nav bar includes links to the primary pages, accessibility buttons, and a progress bar, so the user knows their relative location to the bottom of the page. The order of the pages is in the order of the priorities and purpose of the website. Regardless of where the user is on the website, almost every other aspect of the website is accessible.&nbsp;</p>
+                    <p>Finally, once users have found the resources they want or wish to receive help immediately, the site is structured so they can request assistance directly via the contact form. Alternatively, they can go to the community services page - select a service, and the contact form will be partially filled out based on the service request they have. Essential to usability is explicitly outlining the purposes of the site, what it does for the user, and setting expectations on the delivery of those expectations.&nbsp;</p>
+                <h4>Learning</h4>
+                    <p>Many aspects of HTML, CSS, and Javascript had to be learned or re-learned in the development of this website outlined in the course and previously attempted tutorials. Outside of review of the course material and Google searches, the following are three (non-exhaustive) examples of required learning to create this site:</p>
+                    <h4>Using Javascript to Inject Re-usable HTML Elements</h4>
+                    <p>The goal of using this was to avoid the copying and pasting of code for my header and footer. I initially found this article on <a href="https://www.freecodecamp.org/news/reusable-html-components-how-to-reuse-a-header-and-footer-on-a-website/" target="_blank" rel="noopener">freecodecamp on how to use HTML templates</a> by injecting a string of text - which contained the desired HTML - into the referenced HTML elements.&nbsp;</p>
+                    <p>This method worked well and achieved the desired result with one problem - anytime I had to update the header/footer, I would have to modify an unformatted string in the .js files, and I also needed .js files for each element I wished to inject. What I wanted to be able to do is have separate HTML files and then reference those files to put them into other HTML files. <a href="https://stackoverflow.com/questions/18712338/make-header-and-footer-files-to-be-included-in-multiple-html-pages" target="_blank" rel="noopener">This stack overflow article</a> pointed me to a w3 library that did this. Originally I sourced the library file and updated the HTML. Later in the project, I simply took the function out of the w3 library and added it to my helper.js file - as it was unnecessary to have the whole library for a single component.&nbsp;</p>
+                    <h4>Learning CSS Grid to Create Grid and Grids within Grids</h4>
+                    <p>The use of CSS Grids - predominantly in the article section - was learned from <a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="_blank" rel="noopener">CSS-Tricks Tutorial</a> and <a href="https://www.youtube.com/watch?v=rg7Fvvl3taU" target="_blank" rel="noopener">Kevin Powell&rsquo;s tutorial</a>. These tutorials aided immensely in the site&rsquo;s creation.&nbsp;</p>
+                    <p>The grid design pattern where I specified row and column sizes sequentially and then outlined the template areas seemed intuitive for such a powerful feature. I was nesting these elements required the nested HTML class or id to be referenced appropriately.&nbsp;</p>
+                    <img src="img/assignment/grid-example.png" alt="CSS code with the standard grid design pattern">
+                    <h4>Javascript: Contact Forms, Referencing/Modifying the DOM, Events, and Control Flow</h4>
+                    <p>The Contact form on the website was challenging because it was essential to link the contact form from other pages, handle errors, and dynamically update and submit the form. I worked through the and the w3school tutorial (amoung other sources) on making contact forms to implement. From there, I applied the CSS concepts learned in this course to land on the final design of the form.&nbsp;</p>
+                    <p>Once the form was complete, I researched how to link the Community Services Page with the form - once I got the links to manipulate the form values&nbsp;</p>
+                <h4>Evaluation: Successful Aspects</h4>
+                    <p>There are a few aspects that I would personally regard as successful in terms of beginner-level web development:</p>
+                <ul>
+                   <li><strong>The design and look</strong> Though it is not on the level of a professional site - the final design of the site exceeded my initial expectations.</li>
+                </ul>
+                   <p> Following Kevin Powell's advice on designing the site in black and white and adding a little color was the central concept I used for visual design, aside from looking at Bonza.se for design queues. Another component of the design was removing elements.&nbsp;</p>
+                    <p style="text-align: center;">Take this example of an initial card I had:</p>
+                    <img src="img/assignment/original-card.png" alt="A css card with many elements, that's a little cluttered">
+                    <p style="text-align: center;">Then the final:</p>
+                    <img src="img/assignment/final-card.png" alt="A css image banner with fewer elements that appears more elegant">
+                    <p>The final card is much cleaner, arguably more visually appealing, and would have been much easier to implement in the first place. This is because the original card had too many elements - and they weren&rsquo;t serving a purpose. For example, the topic textbox component had marginal returns to the user and took time to determine how to make it responsive. Sometimes the removal of unnecessary elements aids in the overall design and functionality.</p>
+                <ul>
+                   <li><strong>The site navbar addressed the user's need for immediate access</strong> to the components of the website they like when landing the site while giving the user information on where they are on a particular page, while also giving them access to the color contrast and link underlying accessibility feature. Along with mobile responsiveness and incorporating the logo to the accessibility menu, this element is not duplicated over each page but instead is inserted by accessing and manipulating the DOM directly.&nbsp;&nbsp;</li>
+                   <li><strong>The website is easily navigated </strong>but the user can bypass steps they don&rsquo;t want. This easy navigation contributes to the site's relative success. The user can access what they like using the navbar, but if they aren&rsquo;t sure, they can read the homepage. Each page references the next logical step in the process and works to get them to the next targeted goal:</li>
+                   <li><strong>Landing on Homepage &gt; Navbar for all OR &gt; Homepage if the user is unsure</strong></li>
+                   <li><strong>Learning Describes PowerBI on a high level &gt; links to the article as a next step</strong></li>
+                   <li><strong>Services &gt; Contact Form, based on the specific services that they wanted to look at, the form is pre-filled, and details are collected based on the selection.&nbsp;</strong></li>
+                </ul>
+                <h4>Evaluation: Future Improvements/Lessons Learned</h4>
+                <p>The development process could have been improved by creating smaller development tasks would have made creation more enjoyable and allowed for more granular time-boxing. To add, ensuring each element is cleaned and commented on when the building would have saved an immense amount of time re-learning implemented items and commenting on them.&nbsp;</p>
+                <p>The CSS structure of the site is not optimized or organized in an ideal fashion and was cleaned towards the end of the project; actioning on the go would have been optimal.</p>
+
+                    <p>The overall number of CSS elements is higher than necessary to produce the desired visual elements - having more &lsquo;parent&rsquo; classes would result in less CSS code. Also, CSS is inconsistently referenced; bring referenced by class and ID. When converting to ID, there was unexpected behavior, and tutorials used different conventions to create the pages.</p>
+                    <p>When inspecting CSS elements, many are present in the code that can simply be removed or refactored. Also, using a framework like Bootstrap could have made this component more orderly and consistent.</p>
+                    <p>To conclude, having more modularized CSS, smaller development tasks, and use of modern libraries and templating tools would have produce a much richer content experience for a smaller investment of time.</p>
+                <h4><strong>References</strong></h4>
+                    <p>&ldquo;A Complete Guide to Grid | CSS-Tricks - CSS-Tricks.&rdquo; <em>CSS-Tricks</em>, 12 May 2021, <a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="_blank" rel="noopener">https://css-tricks.com/snippets/css/complete-guide-grid/</a>.</p>
+                    <p>Bressler, Kristina. &ldquo;Html - How to Make the Radio Buttons with Tabs Work in Pure Css? - Stack Overflow.&rdquo; <em>Stack Overflow</em>, <a href="https://stackoverflow.com/questions/52956963/how-to-make-the-radio-buttons-with-tabs-wor" target="_blank" rel="noopener">https://stackoverflow.com/questions/52956963/how-to-make-the-radio-buttons-with-tabs-wor</a>k-in-pure-css</p>
+                    <p>Coding. <em>Responsive Cards UI Design in HTML and CSS | CSS3 Cards</em>. YouTube, 3 Dec. 2020, <a href="https://www.youtube.com/watch?v=YBokwsAjKvA" target="_blank" rel="noopener">https://www.youtube.com/watch?v=YBokwsAjKvA</a>.</p>
+                    <p>Curbal. <em>Do You Want to Level up Your Power BI Game?</em> YouTube, 28 Aug. 2018, <a href="https://www.youtube.com/watch?v=ROqF_m9NP9E" target="_blank" rel="noopener">https://www.youtube.com/watch?v=ROqF_m9NP9E</a>.</p>
+                    <p>&ldquo;Home - Bonza.&rdquo; <em>Bonza</em>, 21 Oct. 2019, <a href="https://bonza.se/" target="_blank" rel="noopener">https://bonza.se/</a>.</p>
+                    <p>&ldquo;Home - SQLBI.&rdquo; <em>SQLBI</em>, <a href="https://www.sqlbi.com/" target="_blank" rel="noopener">https://www.sqlbi.com/</a>.&nbsp;</p>
+                    <p>Kim, Allen. &ldquo;How To Build Tabs Only with CSS. There Are Several Ways to Provide&hellip; | by Allen Kim | Digital-Heart | Medium.&rdquo; <em>Medium</em>, Digital-Heart, 15 Mar. 2019, <a href="https://medium.com/allenhwkim/how-to-build-tabs-only-with-css-844718d7de2f" target="_blank" rel="noopener">https://medium.com/allenhwkim/how-to-build-tabs-only-with-css-844718d7de2f</a>.</p>
+                    <p>Koishigawa, Kris. &ldquo;Reusable HTML Components &ndash; How to Reuse a Header and Footer on a Website.&rdquo; <em>FreeCodeCamp.Org</em>, freeCodeCamp.org, 2 Oct. 2020, <a href="https://www.freecodecamp.org/news/reusable-html-components-how-to-reuse-a-header-and-footer-on-a-website/" target="_blank" rel="noopener">https://www.freecodecamp.org/news/reusable-html-components-how-to-reuse-a-header-and-footer-on-a-website/</a>.</p>
+                    <p>Market, Coding. <em>Responsive Cards UI Design in HTML and CSS | CSS3 Cards</em>. YouTube, 3 Dec. 2020, <a href="https://www.youtube.com/watch?v=YBokwsAjKvA" target="_blank" rel="noopener">https://www.youtube.com/watch?v=YBokwsAjKvA</a>.</p>
+                    <p>Powell, Kevin. &ldquo;Kevin Powell - YouTube.&rdquo; <em>YouTube</em>, <a href="https://www.youtube.com/kepowob" target="_blank" rel="noopener">https://www.youtube.com/kepowob</a>.&nbsp;</p>
+                    <p><em>Learn CSS Grid the Easy Way</em>. YouTube, 25 Nov. 2021, <a href="https://www.youtube.com/watch?v=rg7Fvvl3taU" target="_blank" rel="noopener">https://www.youtube.com/watch?v=rg7Fvvl3taU</a>.</p>
+                    <p>&ldquo;Power BI Paginated Report - Perfect for Printing - RADACAD.&rdquo; <em>RADACAD</em>, https://www.facebook.com/RADACAD/, 18 Aug. 2022, <a href="https://radacad.com/power-bi-paginated-report-perfect-for-printing" target="_blank" rel="noopener">https://radacad.com/power-bi-paginated-report-perfect-for-printing</a>.</p>
+                    <p>Prasanth, R. &ldquo;Javascript - Make Header and Footer Files to Be Included in Multiple Html Pages - Stack Overflow.&rdquo; <em>Stack Overflow</em>, <a href="https://stackoverflow.com/questions/18712338/make-header-and-footer-files-to-be-included-in-multiple-html-pages" target="_blank" rel="noopener">https://stackoverflow.com/questions/18712338/make-header-and-footer-files-to-be-included-in-multiple-html-pages</a>.</p>
+                    <p>RohitDegree in Computer Science and Engineer: App Developer and has multiple Programming languages experience. Enthusiasm for technology &amp; like learning technical. &ldquo;JavaScript Contact Form Validation in HTML: Example Code - Eyehunts.&rdquo; <em>Tutorial</em>, 9 June 2021, <a href="https://tutorial.eyehunts.com/js/javascript-contact-form-validation-in-html-example-code/." target="_blank" rel="noopener">https://tutorial.eyehunts.com/js/javascript-contact-form-validation-in-html-example-code/.&nbsp;</a></p>
+                    <p>&ldquo;W3Schools Free Online Web Tutorials.&rdquo; <em>W3Schools Online Web Tutorials</em>, <a href="https://www.w3schools.com/." target="_blank" rel="noopener">https://www.w3schools.com/.&nbsp;</a></p>
+                    <p>&ldquo;Codepen.io&rdquo; <em>CodePen</em>, <a href="https://codepen.io/" target="_blank" rel="noopener"><em>https://codepen.io/</em></a><em>, </em><a href="https://codepen.io/masha_tatosh/pen/oNgoyoy" target="_blank" rel="noopener"><em>https://codepen.io/masha_tatosh/pen/oNgoyoy</em></a></p>
+                    <p><em>&ldquo;Awesome Contact Form Using HTML &amp; CSS &amp; JavaScript.&rdquo; </em>YouTube, YouTube, 24 July 2020, <a href="https://www.youtube.com/watch?v=rpujWVkmiPE" target="_blank" rel="noopener">https://www.youtube.com/watch?v=rpujWVkmiPE</a>.</p>
+                <h4><strong>Images and Video References</strong></h4>
+                    <p>Purple Dashboard: &ldquo;Crypto Dashboard.&rdquo; <em>Xd File</em>, 23 Mar. 2021, <a href="https://xdfile.com/stocks-crypto-candle-chart-xd-template/" target="_blank" rel="noopener">https://xdfile.com/stocks-crypto-candle-chart-xd-template/</a>.</p>
+                    <p>Excel Ribbon Image: &ldquo;Extensorimo R5 Und Hausdata R4 Immobilien Software.&rdquo; <em>EXTENSO</em>, <a href="https://www.extenso.ch/" target="_blank" rel="noopener">https://www.extenso.ch/</a>.</p>
+                    <p>Homepage Video: TechnologyAdvice1. &ldquo;Power Bi Demo.&rdquo; <em>YouTube</em>, YouTube, 23 Mar. 2020, h<a href="http://www.youtube.com/watch?v=cIMTtzLfuyo" target="_blank" rel="noopener">ttps://www.youtube.com/watch?v=cIMTtzLfuyo</a>.&nbsp;</p>
+                    <p>Python Code: My Github <a href="https://github.com/timscongack" target="_blank" rel="noopener">https://github.com/timscongack</a></p>
+                    <p>Black and Green Dashboard: Lapajne, Andrej. &ldquo;How to Create the Best KPI Dashboard to Make Smarter Decisions Faster.&rdquo; <em>Zebra BI</em>, 21 Dec. 2021, <a href="https://zebrabi.com/create-the-best-kpi-dashboard/" target="_blank" rel="noopener">https://zebrabi.com/create-the-best-kpi-dashboard/</a>.</p>
+                    <p>City Image: ​​Igini, Martina. &ldquo;Could the Bill Gates Smart City Lead the Way for Other Cities to Follow? | Earth.Org.&rdquo; <em>Earth.Org</em>, https://www.facebook.com/hivelifemagazine, 9 Feb. 2022, <a href="https://earth.org/bill-gates-smart-city/" target="_blank" rel="noopener">https://earth.org/bill-gates-smart-city/</a>.</p>
+                <h1>Site/File Map, Wireframe, Final Mockup</h1>
+                <h4>The below is a large image of all the design work created using Figma, it may take several seconds to load.</h4>
+                <h4>Note: with the injectable HTML elements the site's HTML were validated and cleared the w3 HTML validator there is an unavoidable w3-include-html error due to the injectable elements, the individual assets html elements must be validated while incorporated into parent pages.**</h4>
+                <img src="img/assignment/Site-Design.png" alt="A Huge Image showing the site map, file structure, the intial wireframe, and the mockups">
+            </section>
+        </main>
+        <footer w3-include-html="assets/footer.html"></footer><!--injects html from assets/footer.html-->
+        <!--links to javascript components-->
+        <script src="js/app.js"></script> <!--Event listeners and control flow of site-->
+        <script src="js/helper.js"></script> <!--Helper functions for event listeners and control flow of site-->
+    </body>
+    </html>
