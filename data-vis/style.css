@@ -1,0 +1,66 @@
+body {
+    font-family: 'Lato', sans-serif;
+    color: #333;
+    line-height: 1.6;
+  }
+
+head {
+    font-family: 'Lato', sans-serif;
+    color: #333;
+    line-height: 1.6;
+  }
+
+:root {
+    --primary-color: #4e5a65;
+    --secondary-color: #6f8090;
+    --dark-color: #002240;
+    --light-color: #f4f4f4;
+    --success-color: #5cb85c;
+    --error-color: #d9534f;
+    --card-background2 : #303032 ;
+    --yellow-color : #FFFFa7 ;
+  }
+
+.menu-item {
+    transform: translateX(-40px);
+    list-style-type: none;
+    padding: 5px;
+    font-weight: 300;
+    line-height:2;
+    color: var(--lighting-color);
+}
+
+.container {
+  display: flex;
+}
+
+.hover {
+    background: var(--light-color)
+}
+
+.selected{
+    background: var(--yellow-color);
+}
+
+a{
+    text-decoration: none;
+  
+    color: var(--dark-color)
+  }
+
+  h1{
+    font-weight: 300;
+    line-height:1.2;
+    margin: 10px 0;
+    color: var(--lighting-color);
+  }
+
+  .visualizationStyling {
+    background-color: var(--primary-color);
+    font-family: 'Lato', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    color: var(--light-color);
+    position: relative;
+  }
+

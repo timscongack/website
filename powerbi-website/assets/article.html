@@ -1,0 +1,50 @@
+<!-- Slider container -->
+<section id="images-slider">
+  <ul class="slides"> <!-- Slides container -->
+   <input type="radio" name="radio-btn" id="img-1" checked /> <!-- assigned radio button for selection with css -->
+   <li class="slide-container">
+   <div class="slide"><!--Single Slides container -->
+           <h1>Using Pythons Pandas in PowerBI</h1><!--Title -->
+           <p>How to run your statistical analysis and machine learning in PowerBI with the pandas library and scikit-learn</p><!--Article Description -->
+           <img src="img/pandas1.png" alt="image of python code with imports from the pandas library"><!--Image-->
+       </div>
+   <div class="nav"><!--Nav Section with the buttons to right/left-->
+     <label for="img-3" class="prev"><i class="fas fa-chevron-circle-left fa-3x"></i></label><!--Left Button-->
+     <label for="img-2" class="next"><i class="fas fa-chevron-circle-right fa-3x"></i></label><!--Right Button-->
+   </div>
+   </li>
+   <input type="radio" name="radio-btn" id="img-2" /><!-- assigned radio button for selection with css -->
+   <li class="slide-container">
+       <div class="slide"><!--Single Slides container -->
+           <h1>PowerBI Replacing Excel?</h1><!--Title -->
+           <p>Thinking about replacing excel with PowerBI? Where PBI can replace and where it doesn't.</p><!--Article Description -->
+           <img src="img/excelreplacement1.png" alt="image of the ribbon from microsoft excel"><!--Image-->
+       </div>
+   <div class="nav"><!--Nav Section with the buttons to right/left-->
+     <label for="img-1" class="prev"><i class="fas fa-chevron-circle-left fa-3x"></i></label><!--Left Button-->
+     <label for="img-3" class="next"><i class="fas fa-chevron-circle-right fa-3x"></i></label><!--Right Button-->
+   </div>
+   </li>
+   <input type="radio" name="radio-btn" id="img-3" /><!-- assigned radio button for selection with css -->
+   <li class="slide-container">
+       <div class="slide"><!--Single Slides container -->
+           <h1>How to get Started with Building Dashboards</h1><!--Title -->
+           <p>A guide on some of the basic concepts in PowerBI and how to get up and running.</p><!--Article Description -->
+           <img src="img/dashboard1.png"alt="a picture of a data dashboard with various graphs"><!--Image-->
+       </div>
+   <div class="nav"><!--Nav Section with the buttons to right/left-->
+     <label for="img-2" class="prev"><i class="fas fa-chevron-circle-left fa-3x"></i></label><!--Left Button-->
+     <label for="img-1" class="next"><i class="fas fa-chevron-circle-right fa-3x"></i></label><!--Right Button-->
+   </div>
+   </li>
+   <li class="nav-dots"><!--Nav Section with the dots for each slider menu item-->
+     <label for="img-1" class="nav-dot" id="img-dot-1"></label><!--Dot-->
+     <label for="img-2" class="nav-dot" id="img-dot-2"></label><!--Dot-->
+     <label for="img-3" class="nav-dot" id="img-dot-3"></label><!--Dot-->
+   </li>
+</ul>
+</section>
+</body>
+</html>
+<!--links to javascript components including templates load this last to increase site loading performance-->
+<script src="js/app.js"></script>

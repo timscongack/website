@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!--displays website title-->
+        <title>Articles - PB Dev</title>
+        <!-- Website Information, description, keyboards, and author -->
+        <meta name="description" content="PB Dev Articles">
+        <meta name="keywords" content="Learn PowerBI,PowerBI Help">
+        <meta name="author" content="Tim Scongack">
+        <!-- Changes view to the width of the device -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--links to CSS documents cdn is for images for accessibility menu, style contains all CSS elements -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" /> <!-- References cdn for accessibility icons -->
+        <link rel="stylesheet" href="css/style.css"> <!-- References css file -->
+    </head>
+
+<!--
+    File contents/structure:
+
+    Body section contains
+    1. Header injected from header.html
+    2. Main section with contains:
+        -Article feature section - the featured article + news
+        -All Articles Slider using js and css
+    3. Footer injected from footer.html
+
+    CSS only slider adapted and inspirated by https://codepen.io/STKNG/pen/gVOPMO
+
+-->
+<!--body with added parameters to assist with screenreaders-->
+<body data-new-gr-c-s-loaded="14.1067.0" class="readability-mode"> <!--Screenreader compatibility tags-->
+    <header w3-include-html="assets/header.html"></header> <!--injects html from assets/header.html-->
+    <main> <!--All the main content of the page-->
+        <button onclick="topFunction()" id="myBtn" title="Go to top" class="fas fa-chevron-circle-up fa-3x"></button> <!--To the top of the page when clicked (from W3 schools tutorial)-->
+    <section class="article-containergrid">
+        <h1 id="article-container-title">Featured Article and Updates</h1>
+        <div class="article-feature-containergrid" role="grid"> <!--Section for the top article page-->
+            <div class="main-feature" role="region"><!--Large single Article Feature-->
+            </div>
+            <div class="main-article" role="grid"> <!--Large single Article Feature-->
+                    <img class="article-slider" src="img/pbi_excellent.png" alt="An image of a PowerBI Dashboard in a black and green colour theme with filter pane on left and various graphs and info cards"> <!--Large single Article Feature-->
+                    <div class="published-author" role="article">Date Published: July 23, 2022 | Author: Tim Scongack</div> <!--Author/Published Info Inside Title-->
+                    <div class="article-title" role="article">How to Build Beautiful Dashboards</div> <!--Large single Article Feature-->
+                    <div class="article-body" role="article">PowerBI makes it easy to create dashboards quickly and easily, but sometimes it can be tricky to make your dashboards beautiful. There are some tips on...</div> <!--Large single Article Feature-->
+                </div>
+            <div class="news" role="region"></div> <!--News Section-->
+            <!--Aside for the news that moves below the featured articles on mobile -->
+            <aside class="news-card-1">
+                <!-- Recent Updates header -->
+                <h2 id="recent-updates">Recent Updates</h2>
+                <p class="news-event"><span class="sidebar-bold">Error bars</span> added in new error bars in transform queries</p>  <!-- Updates item -->
+                <p class="news-event"><span class="sidebar-bold">Bold, italics and underline</span> for text in the header tooltip</p>  <!-- Updates item -->
+                <p class="news-event"><span class="sidebar-bold">Metric</span>  visual updates</p>  <!-- Updates item -->
+            </aside>
+            <aside class="news-card-1">
+                <!-- General News header -->
+                <h2 id="general-news">General News</h2>
+                <p class="news-event"><span class="sidebar-bold">Partners:</span>  Introducing a new way to manage, enforce and transact licenses for Power BI visuals</p> <!-- News item -->
+                <p class="news-event"><span class="sidebar-bold">ExecuteQueries REST API </span> versus XMLA endpoints at scale</p> <!-- News item -->
+                <p class="news-event"><span class="sidebar-bold">Visualizing views</span> in Dynamics 365 with Power BI is now generally available</p> <!-- News item -->
+            </aside>
+        </div>
+    </section>
+
+    <!-- Basic Hero section linking to the join us site -->
+    <section class="joinus-hero">
+
+        <div class="overlay"></div>
+        <div class="joinus-hero-content">
+        <!--Display text of the hero section-->
+        <h1>Want to be a Part of Our Community</h1>
+        <button onclick="location.href='join.html'">Join Now</button> <!--The button element-->
+        </div>
+    </section>
+
+    <div w3-include-html="assets/article.html"></div> <!--injects html from assets/article.html-->
+    </main>
+    <footer w3-include-html="assets/footer.html"></footer><!--injects html from assets/footer.html-->
+    <!--links to javascript components-->
+    <script src="js/app.js"></script> <!--Event listeners and control flow of site-->
+    <script src="js/helper.js"></script> <!--Helper functions for event listeners and control flow of site-->
+</body>
+</html>

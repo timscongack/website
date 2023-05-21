@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en"> <!--Language-->
+    <head>
+        <meta charset="utf-8"> <!--Encoding-->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!--Compatibility-->
+        <!--displays website title-->
+        <title>Services - PB Dev</title>
+        <!-- Website Information, description, keyboards, and author -->
+        <meta name="description" content="PB Services and Help Section">
+        <meta name="keywords" content="PowerBI Services,PowerBI Help">
+        <meta name="author" content="Tim Scongack">
+        <!-- Changes view to the width of the device -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--links to CSS documents cdn is for images for accessibility menu, style contains all CSS elements -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+        <link rel="stylesheet" href="css/style.css"> <!--Links to CSS file-->
+        <script src="js/helper.js"></script> <!--Loading at top to allow use of helper functions-->
+      </head>
+
+<!--
+    File contents/structure:
+
+    Body section contains
+    1. Header injected from header.html
+    2. Main section with contains:
+        -A grid with various service selections
+    3. Footer injected from footer.html
+
+    Cards inspired from https://codepen.io/MarkBoots/pen/xxpmrZO
+    Tutorial resources used https://www.youtube.com/watch?v=YBokwsAjKvA
+-->
+
+<body data-new-gr-c-s-loaded="14.1067.0" class="readability-mode"> <!--Screenreader compatibility tags-->
+    <!--Header is inserted using the w3.js library then we call the function-->
+    <header w3-include-html="assets/header.html"></header> <!--injects html from assets/header.html-->
+    <main> <!--All the main content of the page-->
+      <button onclick="topFunction()" id="myBtn" title="Go to top" class="fas fa-chevron-circle-up fa-3x"></button> <!--To the top of the page when clicked (from W3 schools tutorial)-->
+            <section class="service-container" id="help"> <!--All of the services section-->
+              <div class="help-section-header" role=grid>
+                  <h3>Help</h3> <!--Title-->
+                  <p>Learning PowerBI can be difficult, our group of talented PowerBI enthusiasts can help you or your business with problems you are facing. Whatever, problem you are facing we can connect you to the right people</p>  <!--Text on how we can help-->
+
+                <div class="help-grid" role="row"> <!--Contains the services/help grid section-->
+
+                  <div class="box-flex" role="gridcell"> <!--Each flex box, tagged as cell-->
+                    <div class="box"> <!--Box within a box-->
+                      <div class="icon" role="img"> <!--Icon container-->
+                        <i class="fa fa-chart-bar service-icon"></i> <!--Icon reference-->
+                      </div>
+                      <h4 class="title"><a href="join.html?Dev-Option">Development</a></h4> <!--Title and link passes param into url to be used by javascipt in form selection-->
+                      <p class="description"><!--Description-->
+                                  Get help with your development questions.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="box-flex" role="gridcell"><!--Each flex box, tagged as cell-->
+                    <div class="box"> <!--Box within a box-->
+                      <div class="icon" role="img"><!--Icon container-->
+                        <i class="fa fa-code service-icon"></i><!--Icon reference-->
+                      </div>
+                      <h4 class="title"><a href="join.html?ETL-Option">ETL (Extract Transform Load)</a></h4><!--Title and link passes param into url to be used by javascipt in form selection-->
+                      <p class="description"><!--Description-->
+                        Tough Dataset? Get help with SQL, DAX Support?
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="box-flex" role="gridcell"><!--Each flex box, tagged as cell-->
+                    <div class="box"><!--Box within a box-->
+                      <div class="icon" role="img"><!--Icon container-->
+                        <i class="fa fa-graduation-cap service-icon"></i><!--Icon reference-->
+                      </div>
+                      <h4 class="title"><a href="join.html?Training-Option" >Training and Mentorship</a></h4><!--Title and link passes param into url to be used by javascipt in form selection-->
+                      <p class="description"><!--Description-->
+                        Want to learn? We'll connect you to a mentor.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="box-flex" role="gridcell"><!--Each flex box, tagged as cell-->
+                      <div class="box"><!--Box within a box-->
+                          <div class="icon" role="img"><!--Icon container-->
+                            <i class="fa fa-wrench service-icon"></i><!--Icon reference-->
+                          </div>
+                          <h4 class="title"><a href="join.html?Modification-Option">Modify, Repair, Redesign</a></h4><!--Title and link passes param into url to be used by javascipt in form selection-->
+                          <p class="description"><!--Description-->
+                            Need an expert to look where things broke?
+                          </p>
+                        </div>
+                  </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer w3-include-html="assets/footer.html"></footer><!--injects html from assets/footer.html-->
+    <!--links to javascript components this last to increase site loading performance-->
+    <script src="js/app.js"></script>
+</body>
+</html>

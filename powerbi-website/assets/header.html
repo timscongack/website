@@ -1,0 +1,40 @@
+<!--File contents/structure: Contains all the html for the header-->
+<header id="header">
+    <!-- Navbar contains the primary way to navigate the site left (accessibility) and right nav bars-->
+    <nav class="navbar" id="topNav">
+    <!-- Container for progress bar-->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar" role="progressbar"></div> <!-- Div with the progress bar itself-->
+    </div>
+        <div class="container flex"  id="navItems" role="toolbar">
+        <!-- Accessibility Options, linked underline and colour contrast-->
+        <a class="fa fa-link" id="linkUnderline" role="button"></a>
+        <a class="fas fa-palette" id="toggleColour" role="button"></a>
+        <!-- Logo image and accessibility-->
+        <div class="logo-image" role="none">
+            <!-- Logo Image-->
+            <img src="img/logo.png" id = "logo" alt="PB Dev Logo">
+        </div>
+        <!-- Below is the normal navigation bar used for all devices-->
+        <!-- Using a checkbox we activate CSS elements for the mobile -->
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <nav id = "menu" role="menubar">
+            <ul>
+                <!-- Nav menu items for the right hand menu -->
+                <li><a href="index.html" title="Home Page">HOME</a></li> <!-- link to the homepage-->
+                <li><a href="learn.html" title="Articles">LEARN</a></li> <!-- link to the article page-->
+                <li><a href="articles.html" title="Articles">ARTICLES</a></li> <!-- link to the article page-->
+                <li><a href="help.html" title="help">HELP & SERVICES</a></li> <!-- link to the services page-->
+                <li><a href="join.html" title="Join">CONTACT</a></li> <!-- link to the contact page-->
+                <li><a href="report.html" title="Report">REPORT</a></li> <!-- link to the report page-->
+            </ul>
+        </nav>
+        <!--Nav Toggle menu to control responsive menu id set to hide to remove the default html checkbox-->
+        <label for="nav-toggle" class="nav-toggle-label" id="hide">
+            <span id="hiddenCheckbox" role="radio" aria-checked="false"></span>  <!--This is hidden but toggles the mobile menu-->
+        </label>
+        </div>
+    </nav>
+</header>
+<!--links to javascript components including templates load this last to increase site loading performance-->
+<script src="js/app.js"></script>
