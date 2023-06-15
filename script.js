@@ -78,6 +78,11 @@ document.addEventListener('DOMContentLoaded', function() {
         icon: "fas fa-sitemap",
         description: "Classifying Poisonous Mushrooms.",
         link: "classification.html"
+      },
+      {
+        icon: "fas fa-camera",
+        description: "Visual Filter App",
+        link: "FilterApp/index.html"
       }
     ];
 
