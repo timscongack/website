@@ -5,7 +5,7 @@ var buttonCartoon;
 var activeEffectFunction = null; // Variable to store the function to be called
 
 function setup() {
-    createCanvas(640, 480 * 2);
+    createCanvas(windowHeight, windowWidth * 2);
     pixelDensity(1);
     video = createCapture(VIDEO);
     video.hide();
@@ -33,7 +33,7 @@ function draw() {
   background(0);
   image(video, 0, 0);
   video.loadPixels();
-  translate(0, 480);
+  translate(0, windowWidth);
 
     if (activeEffectFunction) {
         activeEffectFunction();
