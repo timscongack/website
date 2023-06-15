@@ -3,7 +3,8 @@ var slider;
 var button;
 var buttonCartoon;
 var activeEffectFunction = null; // Variable to store the function to be called
-var height, width
+var height, width;
+var frontCamera = false;
 
 function setup() {
     createCanvas(640, 480);
@@ -18,16 +19,58 @@ function setup() {
 
     // Create buttons
     buttonPieBrightness = createButton('Pie Brightness');
-    buttonPieBrightness.position(150, 10);
+    buttonPieBrightness.position(10, 30);
     buttonPieBrightness.mousePressed(() => activeEffectFunction = drawPieBrightness);
 
     buttonGreyScale = createButton('Grey Scale');
-    buttonGreyScale.position(260, 10);
+    buttonGreyScale.position(10, 60);
     buttonGreyScale.mousePressed(() => activeEffectFunction = drawGreyScale);
 
     buttonCartoon = createButton('Cartoony');
-    buttonCartoon.position(350, 10);
+    buttonCartoon.position(10, 90);
     buttonCartoon.mousePressed(() => activeEffectFunction = drawCartoony);
+
+    buttonNightVision = createButton('Night Vision');
+    buttonNightVision.position(10, 120);
+    buttonNightVision.mousePressed(() => activeEffectFunction = drawNightVision);
+
+}
+
+function draw() {
+  background(0);
+  video.loadPixels();
+
+    if (activeEffectFunction) {
+        activeEffectFunction();
+    }
+}
+
+function flipCamera() {
+    frontCamera = !frontCamera; // flip the frontCamera variable
+
+    let constraints;
+
+    if (frontCamera) {
+        constraints = {
+            video: {
+                facingMode: "user"
+            },
+            audio: false
+        };
+    } else {
+        constraints = {
+            video: {
+                facingMode: {
+                    exact: "environment"
+                }
+            },
+            audio: false
+        };
+    }
+
+    video = createCapture(constraints, () => {
+        video.size(width, height);
+    });
 }
 
 function draw() {
@@ -113,7 +156,51 @@ function drawGreyScale() {
     }
   }
 
+  function flipCamera() {
+    frontCamera = !frontCamera; // flip the frontCamera variable
 
+    let constraints;
+
+    if (frontCamera) {
+        constraints = {
+            video: {
+                facingMode: "user"
+            },
+            audio: false
+        };
+    } else {
+        constraints = {
+            video: {
+                facingMode: {
+                    exact: "environment"
+                }
+            },
+            audio: false
+        };
+    }
+
+    video = createCapture(constraints, () => {
+        video.size(width, height);
+    });
+}
+
+function drawNightVision() {
+  var scaleBrightness = map(slider.value(), slider.elt.min, slider.elt.max, 1, 8);
+
+  for (var x = 0; x < video.width; x += 2) {
+    for (var y = 0; y < video.height; y += 2) {
+      var index = (x + y * video.width) * 4;
+      var r = video.pixels[index+0];
+      var g = video.pixels[index+1];
+      var b = video.pixels[index+2];
+
+      var brightness = (r + g + b) / 3 * scaleBrightness; // Scale the brightness by the slider value
+
+      fill(brightness, brightness * 1.85, brightness * 1.4); // Simulate night vision by making the image mostly green
+      rect(x, y, 2, 2); // half resolution
+    }
+  }
+}
 
 
 
