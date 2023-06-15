@@ -3,9 +3,10 @@ var slider;
 var button;
 var buttonCartoon;
 var activeEffectFunction = null; // Variable to store the function to be called
+var height, width
 
 function setup() {
-    createCanvas(windowHeight, windowWidth * 2);
+    createCanvas(640, 480 * 2);
     pixelDensity(1);
     video = createCapture(VIDEO);
     video.hide();
@@ -33,7 +34,7 @@ function draw() {
   background(0);
   image(video, 0, 0);
   video.loadPixels();
-  translate(0, windowWidth);
+  translate(0, 480);
 
     if (activeEffectFunction) {
         activeEffectFunction();
