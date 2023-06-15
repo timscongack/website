@@ -138,8 +138,8 @@ function drawGreyScale() {
   function drawCartoony() {
     var quantizeLevels = slider.value(); // Slider controls the quantize levels
 
-    for (var x = 0; x < video.width; x++) {
-      for (var y = 0; y < video.height; y++) {
+    for (var x = 0; x < video.width; x+=2) {
+      for (var y = 0; y < video.height; y+=2) {
         var index = (x + y * video.width) * 4;
         var r = video.pixels[index+0];
         var g = video.pixels[index+1];
@@ -151,38 +151,10 @@ function drawGreyScale() {
         b = floor(b / 255 * quantizeLevels) * (255 / (quantizeLevels - 1));
 
         fill(r, g, b);
-        rect(x, y, 1, 1); // Full resolution
+        rect(x, y, 2, 2); // half resolution
       }
     }
   }
-
-  function flipCamera() {
-    frontCamera = !frontCamera; // flip the frontCamera variable
-
-    let constraints;
-
-    if (frontCamera) {
-        constraints = {
-            video: {
-                facingMode: "user"
-            },
-            audio: false
-        };
-    } else {
-        constraints = {
-            video: {
-                facingMode: {
-                    exact: "environment"
-                }
-            },
-            audio: false
-        };
-    }
-
-    video = createCapture(constraints, () => {
-        video.size(width, height);
-    });
-}
 
 function drawNightVision() {
   var scaleBrightness = map(slider.value(), slider.elt.min, slider.elt.max, 1, 8);
