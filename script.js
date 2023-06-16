@@ -1,5 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
   var currentLocation = window.location.href;
+  var headerHeight = document.querySelector('.header').offsetHeight;
+  var controlsDiv = document.getElementById('controls');
+  controlsDiv.style.top = headerHeight + 'px';
 
   // Check if the current location is the main directory of the website
   if (!currentLocation.endsWith('/')) {
