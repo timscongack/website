@@ -6,34 +6,30 @@ var activeEffectFunction = null; // Variable to store the function to be called
 var height, width;
 var frontCamera = false;
 
+function createEffectButton(label, positionY, effectFunction) {
+  let button = createButton(label);
+  button.position(10, positionY);
+  button.mousePressed(() => activeEffectFunction = effectFunction);
+  return button;
+}
+
 function setup() {
-    createCanvas(640, 480);
-    pixelDensity(1);
-    video = createCapture(VIDEO);
-    video.hide();
-    noStroke();
-    angleMode(DEGREES);
+  createCanvas(640, 480);
+  pixelDensity(1);
+  video = createCapture(VIDEO);
+  video.hide();
+  noStroke();
+  angleMode(DEGREES);
 
-    slider = createSlider(8, 30, 8);
-    slider.position(10, 10);
+  slider = createSlider(8, 30, 8);
+  slider.position(10, 10);
 
-    // Create buttons
-    buttonPieBrightness = createButton('Pie Brightness');
-    buttonPieBrightness.position(10, 30);
-    buttonPieBrightness.mousePressed(() => activeEffectFunction = drawPieBrightness);
-
-    buttonGreyScale = createButton('Grey Scale');
-    buttonGreyScale.position(10, 60);
-    buttonGreyScale.mousePressed(() => activeEffectFunction = drawGreyScale);
-
-    buttonCartoon = createButton('Cartoony');
-    buttonCartoon.position(10, 90);
-    buttonCartoon.mousePressed(() => activeEffectFunction = drawCartoony);
-
-    buttonNightVision = createButton('Night Vision');
-    buttonNightVision.position(10, 120);
-    buttonNightVision.mousePressed(() => activeEffectFunction = drawNightVision);
-
+  // Create buttons with the new function
+  buttonPieBrightness = createEffectButton('Pie Brightness', 30, drawPieBrightness);
+  buttonGreyScale = createEffectButton('Grey Scale', 60, drawGreyScale);
+  buttonCartoon = createEffectButton('Cartoony', 90, drawCartoony);
+  buttonNightVision = createEffectButton('Night Vision', 120, drawNightVision);
+  buttonInvertFilter = createEffectButton('Invert Filter', 150, drawInvertFilter);
 }
 
 function draw() {
@@ -160,7 +156,7 @@ function drawNightVision() {
   var scaleBrightness = map(slider.value(), slider.elt.min, slider.elt.max, 1, 8);
 
   for (var x = 0; x < video.width; x += 2) {
-    for (var y = 0; y < video.height; y += 2) {
+    for (var y = 0; y < video.width; y += 2) {
       var index = (x + y * video.width) * 4;
       var r = video.pixels[index+0];
       var g = video.pixels[index+1];
@@ -174,5 +170,19 @@ function drawNightVision() {
   }
 }
 
+function drawInvertFilter(){
+  for (var x = 0; x < video.width; x++) {
+    for (var y = 0; y < video.height; y++) {
 
+      var index = (x + y * video.width) * 4;
+      //invert the channel values
+      var r = 255 - video.pixels[index + 0];
+      var g = 255 - video.pixels[index + 1];
+      var b = 255 - video.pixels[index + 2];
 
+      // Update the canvas pixels, not the video pixels
+      fill(r, g, b);
+      rect(x, y, 2, 2);
+    }
+  }
+}
