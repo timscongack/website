@@ -13,24 +13,43 @@ function createEffectButton(label, positionY, effectFunction) {
   return button;
 }
 
+var controlDiv;
+
 function setup() {
-  createCanvas(640, 480);
+  let cnv = createCanvas(640, 480);
+  cnv.parent('FilterImageContainer');
   pixelDensity(1);
   video = createCapture(VIDEO);
   video.hide();
   noStroke();
   angleMode(DEGREES);
 
+  controlDiv = createDiv(''); // create a div for the controls
+  controlDiv.id('controls'); // give the div an id for styling
+  controlDiv.style('height', height + 'px'); // set the control div to the same height as the canvas
+
   slider = createSlider(8, 30, 8);
-  slider.position(10, 10);
+  slider.parent(controlDiv);
 
   // Create buttons with the new function
-  buttonPieBrightness = createEffectButton('Pie Brightness', 30, drawPieBrightness);
-  buttonGreyScale = createEffectButton('Grey Scale', 60, drawGreyScale);
-  buttonCartoon = createEffectButton('Cartoony', 90, drawCartoony);
-  buttonNightVision = createEffectButton('Night Vision', 120, drawNightVision);
-  buttonInvertFilter = createEffectButton('Invert Filter', 150, drawInvertFilter);
+  buttonPieBrightness = createEffectButton('Pie Brightness', drawPieBrightness);
+  buttonGreyScale = createEffectButton('Grey Scale', drawGreyScale);
+  buttonCartoon = createEffectButton('Cartoony', drawCartoony);
+  buttonNightVision = createEffectButton('Night Vision', drawNightVision);
+  buttonInvertFilter = createEffectButton('Invert Filter', drawInvertFilter);
+  buttonThresholdFilter = createEffectButton('Threshold Filter', drawThresholdFilter);
 }
+
+var buttonHeight = 20; // The height of each button
+var buttonSpacing = 5; // The space between each button
+
+function createEffectButton(label, effectFunction) {
+  let button = createButton(label);
+  button.parent(controlDiv); // make the buttons children of the control div
+  button.mousePressed(() => activeEffectFunction = effectFunction);
+  return button;
+}
+
 
 function draw() {
   background(0);
@@ -117,7 +136,7 @@ function drawGreyScale() {
             var r = video.pixels[index+0];
             var g = video.pixels[index+1];
             var b = video.pixels[index+2];
-
+            //var gray = r * 0.299 + g * 0.587 + b * 0.114; better way to calc greyscale
             brightnessSum += (r + g + b) / 3; // Calculate brightness value as average of RGB values
             count++;
           }
@@ -183,6 +202,35 @@ function drawInvertFilter(){
       // Update the canvas pixels, not the video pixels
       fill(r, g, b);
       rect(x, y, 2, 2);
+    }
+  }
+}
+
+function drawThresholdFilter() {
+  for (var x = 0; x < video.width; x++) {
+    for (var y = 0; y < video.height; y++) {
+
+        var index = (x + y * video.width) * 4;
+        var r = video.pixels[index + 0];
+        var g = video.pixels[index + 1];
+        var b = video.pixels[index + 2];
+        var bright = 0.3 * r + 0.59 * g + 0.11 * b; // LUMA ratios
+
+        var threshold = map(slider.value(), slider.elt.min, slider.elt.max, 0, 255);
+
+        if (bright > threshold) {
+            r = 255;
+            g = 255;
+            b = 255;
+        } else {
+            r = 0;
+            g = 0;
+            b = 0;
+        }
+
+        // Update the canvas pixels, not the video pixels
+        fill(r, g, b);
+        rect(x, y, 2, 2);  // Set the pixel on the canvas
     }
   }
 }

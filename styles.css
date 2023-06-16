@@ -325,3 +325,36 @@ body {
   display: block;
   margin: 30px auto;
 }
+
+#controls {
+  position: absolute;
+  top: 120px;
+  left: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#controls button, #controls input {
+  margin-top: 2px;
+  margin-bottom: 2px;
+  padding: 10px 10px;
+  color: white;
+  background-color: var(--secondary-color);
+  border: none;
+  border-radius: 10px; /* add this line, adjust value to change roundness */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+#controls button:hover, #controls input:hover {
+  background-color: var(--accent-color);
+  color: black;
+}
+
+
+
