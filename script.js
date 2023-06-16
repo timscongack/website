@@ -61,12 +61,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const portfolioItems = [
       {
         icon: "fas fa-chart-line",
-        description: "Javascript Dashboard.",
+        description: "Javascript Dashboard",
         link: "data-vis/index.html"
       },
       {
         icon: "fas fa-code",
-        description: "Website - Power BI Consultancy Company.",
+        description: "Website - Power BI Consultancy Company",
         link: "powerbi-website/index.html"
       },
       {
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
       },
       {
         icon: "fas fa-sitemap",
-        description: "Classifying Poisonous Mushrooms.",
+        description: "Classifying Poisonous Mushrooms",
         link: "classification.html"
       },
       {
