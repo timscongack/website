@@ -27,6 +27,7 @@ function setup() {
   controlDiv = createDiv(''); // create a div for the controls
   controlDiv.id('controls'); // give the div an id for styling
   controlDiv.style('height', height + 'px'); // set the control div to the same height as the canvas
+  controlDiv.position(cnv.position().x + 20, cnv.position().y); // set position of controlDiv to the top right of the canvas
 
   slider = createSlider(8, 30, 8);
   slider.parent(controlDiv);
@@ -39,6 +40,7 @@ function setup() {
   buttonInvertFilter = createEffectButton('Invert Filter', drawInvertFilter);
   buttonThresholdFilter = createEffectButton('Threshold Filter', drawThresholdFilter);
 }
+
 
 var buttonHeight = 20; // The height of each button
 var buttonSpacing = 5; // The space between each button
