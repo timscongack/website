@@ -4,6 +4,7 @@ var button;
 var buttonCartoon;
 var activeEffectFunction = null; // Variable to store the function to be called
 var height, width;
+<<<<<<< Updated upstream
 var frontCamera = false;
 // // gaussian blur
 var matrix = [ //maybe add parameters to generate a dynamic matrix
@@ -11,6 +12,14 @@ var matrix = [ //maybe add parameters to generate a dynamic matrix
      [2/16, 4/16, 2/16],
      [1/16, 2/16, 1/16]
  ];
+=======
+var matrix = [ //gaussian matrix structure for convolution
+  [1/16, 2/16, 1/16],
+  [2/16, 4/16, 2/16],
+  [1/16, 2/16, 1/16]
+];
+
+>>>>>>> Stashed changes
 var matrixSize = matrix.length; //fpr convolutional functions
 
 function createEffectButton(label, positionY, effectFunction) {
@@ -23,7 +32,11 @@ function createEffectButton(label, positionY, effectFunction) {
 var controlDiv;
 
 function setup() {
+<<<<<<< Updated upstream
   let cnv = createCanvas(480, 480);
+=======
+  let cnv = createCanvas(380, 380);
+>>>>>>> Stashed changes
   cnv.parent('FilterImageContainer');
   pixelDensity(1);
   video = createCapture(VIDEO);
@@ -69,6 +82,7 @@ function draw() {
         activeEffectFunction();
     }
 }
+<<<<<<< Updated upstream
 //need to create a button for this
 function flipCamera() {
     frontCamera = !frontCamera; // flip the frontCamera variable
@@ -98,6 +112,10 @@ function flipCamera() {
     });
 }
 
+=======
+
+
+>>>>>>> Stashed changes
 function draw() {
   background(0);
   video.loadPixels();
