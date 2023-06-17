@@ -5,12 +5,12 @@ var buttonCartoon;
 var activeEffectFunction = null; // Variable to store the function to be called
 var height, width;
 var frontCamera = false;
-var matrix = [ //matrix structure for convolution
-  [1/9, 1/9, 1/9],
-  [1/9, 1/9, 1/9],
-  [1/9, 1/9, 1/9]
-]; //we can create a gaussian blue can potentially make a function to generate a matrix and matric size
-
+// // gaussian blur
+var matrix = [ //maybe add parameters to generate a dynamic matrix
+     [1/16, 2/16, 1/16],
+     [2/16, 4/16, 2/16],
+     [1/16, 2/16, 1/16]
+ ];
 var matrixSize = matrix.length; //fpr convolutional functions
 
 function createEffectButton(label, positionY, effectFunction) {
@@ -23,7 +23,7 @@ function createEffectButton(label, positionY, effectFunction) {
 var controlDiv;
 
 function setup() {
-  let cnv = createCanvas(640, 480);
+  let cnv = createCanvas(480, 480);
   cnv.parent('FilterImageContainer');
   pixelDensity(1);
   video = createCapture(VIDEO);
