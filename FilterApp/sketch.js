@@ -5,6 +5,13 @@ var buttonCartoon;
 var activeEffectFunction = null; // Variable to store the function to be called
 var height, width;
 var frontCamera = false;
+var matrix = [ //matrix structure for convolution
+  [1/9, 1/9, 1/9],
+  [1/9, 1/9, 1/9],
+  [1/9, 1/9, 1/9]
+]; //we can create a gaussian blue can potentially make a function to generate a matrix and matric size
+
+var matrixSize = matrix.length; //fpr convolutional functions
 
 function createEffectButton(label, positionY, effectFunction) {
   let button = createButton(label);
@@ -39,6 +46,7 @@ function setup() {
   buttonNightVision = createEffectButton('Night Vision', drawNightVision);
   buttonInvertFilter = createEffectButton('Invert Filter', drawInvertFilter);
   buttonThresholdFilter = createEffectButton('Threshold Filter', drawThresholdFilter);
+  buttonBlurFilter = createEffectButton('Blur Filter', drawBlurFilter);
 }
 
 
@@ -61,7 +69,7 @@ function draw() {
         activeEffectFunction();
     }
 }
-
+//need to create a button for this
 function flipCamera() {
     frontCamera = !frontCamera; // flip the frontCamera variable
 
@@ -232,7 +240,50 @@ function drawThresholdFilter() {
 
         // Update the canvas pixels, not the video pixels
         fill(r, g, b);
-        rect(x, y, 2, 2);  // Set the pixel on the canvas
+        rect(x, y, 2, 2);  // 50% resolution
     }
   }
+}
+
+function drawBlurFilter(){
+  for (var x = 0; x < video.width; x++) { // read every pixel
+      for (var y = 0; y < video.height; y++) {
+
+          var index = (x + y * video.width) * 4;
+          var c = convolution(x, y, matrix, matrixSize, video);
+
+          video.pixels[index + 0] = c[0];
+          video.pixels[index + 1] = c[1];
+          video.pixels[index + 2] = c[2];
+          video.pixels[index + 3] = 255;
+      }
+  }
+  fill(c[0], c[1], c[2]);
+  rect(x, y, 2, 2);  // 50% resolution
+}
+
+function convolution(x, y, matrix, matrixSize, img) {
+  var totalRed = 0.0;
+  var totalGreen = 0.0;
+  var totalBlue = 0.0;
+  var offset = floor(matrixSize / 2);//centers the mask around a specific point
+
+  // convolution matrix loop
+  for (var i = 0; i < matrixSize; i++) {
+      for (var j = 0; j < matrixSize; j++) {
+          // Get pixel loc within convolution matrix
+          var xloc = x + i - offset;
+          var yloc = y + j - offset;
+          var index = (xloc + img.width * yloc) * 4;
+          // ensure we don't address a pixel that doesn't exist
+          index = constrain(index, 0, img.pixels.length - 1);
+
+          // multiply all values with the mask and sum up
+          totalRed += img.pixels[index + 0] * matrix[i][j];
+          totalGreen += img.pixels[index + 1] * matrix[i][j];
+          totalBlue += img.pixels[index + 2] * matrix[i][j];
+      }
+  }
+  // return the new color
+  return [totalRed, totalGreen, totalBlue];
 }

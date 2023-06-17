@@ -31,6 +31,9 @@ document.addEventListener('DOMContentLoaded', function() {
   ];
   // Fill skills grid
   const skillsGrid = document.querySelector(".skills-grid");
+  if(skillsGrid) //call if exists
+  {
+
   skills.forEach(skill => {
     const div = document.createElement('div');
     div.classList.add('skills-item');
@@ -40,6 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     skillsGrid.appendChild(div);
   });
+  }
   const portfolioItems = [
     {
       icon: "fas fa-chart-line",
@@ -70,6 +74,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Fill portfolio items
   const portfolioGrid = document.querySelector(".portfolio-grid");
+  if (portfolioGrid)
+  {
   portfolioItems.forEach(item => {
     const div = document.createElement('div');
     div.classList.add('portfolio-item');
@@ -79,6 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     portfolioGrid.appendChild(div);
   });
+  }
   // Add event listener to update link color when hovered
   const portfolioLinks = document.querySelectorAll(".portfolio-item a");
   portfolioLinks.forEach(link => {
