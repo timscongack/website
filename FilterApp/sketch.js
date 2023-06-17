@@ -4,7 +4,6 @@ var button;
 var buttonCartoon;
 var activeEffectFunction = null; // Variable to store the function to be called
 var height, width;
-var frontCamera = false;
 var matrix = [ //gaussian matrix structure for convolution
   [1/16, 2/16, 1/16],
   [2/16, 4/16, 2/16],
@@ -21,7 +20,9 @@ function createEffectButton(label, positionY, effectFunction) {
 }
 var controlDiv;
 function setup() {
+
   let cnv = createCanvas(640, 480);
+
   cnv.parent('FilterImageContainer');
   pixelDensity(1);
   video = createCapture(VIDEO);
@@ -61,32 +62,7 @@ function draw() {
     }
 }
 
-//need to create a button for this
-function flipCamera() {
-    frontCamera = !frontCamera; // flip the frontCamera variable
 
-    let constraints;
-    if (frontCamera) {
-        constraints = {
-            video: {
-                facingMode: "user"
-            },
-            audio: false
-        };
-    } else {
-        constraints = {
-            video: {
-                facingMode: {
-                    exact: "environment"
-                }
-            },
-            audio: false
-        };
-    }
-    video = createCapture(constraints, () => {
-        video.size(width, height);
-    });
-}
 function draw() {
   background(0);
   video.loadPixels();
